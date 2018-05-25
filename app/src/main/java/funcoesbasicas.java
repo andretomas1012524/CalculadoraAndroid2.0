@@ -62,5 +62,20 @@ public class funcoesbasicas {
         return resultado;
     }
 
+    public double mediaInteira(){
+        double a,b;
+        a=getDoubleA();
+        b=getDoubleB();
+        resultado = (a+b)/2;
+        return resultado;
+    }
 
+    public double media(){
+        double a,b;
+        a= getDoubleA();
+        b=getDoubleB();
+        resultado = (a+b) % 2;
+        return resultado;
+    }
+    
 }
