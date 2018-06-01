@@ -17,7 +17,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".contaspessoais" />
-        <activity android:name=".gastosbens"></activity>
+        <activity android:name=".gastosbens" />
+        <activity android:name=".calculobasico" />
+        <activity android:name=".calculocientifico"></activity>
     </application>
 
 </manifest>
