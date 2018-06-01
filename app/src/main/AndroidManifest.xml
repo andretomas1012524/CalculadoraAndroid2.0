@@ -19,7 +19,9 @@
         <activity android:name=".contaspessoais" />
         <activity android:name=".gastosbens" />
         <activity android:name=".calculobasico" />
-        <activity android:name=".calculocientifico"></activity>
+        <activity android:name=".calculocientifico" />
+        <activity android:name=".funcoesbasicas" />
+        <activity android:name=".maisfuncoesbasica"></activity>
     </application>
 
 </manifest>
