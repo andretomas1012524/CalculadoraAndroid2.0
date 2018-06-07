@@ -37,14 +37,4 @@ public class FuncoesEconomicas {
     }
     //------------- Funcoes e operacoes ------------\\
 
-
-   /* public double IVA(){
-        double a = getFA();
-        double res = getFres();
-        double preco = getPreco();
-
-        if(preco == 0){
-            res
-        }
-    }*/
 }
