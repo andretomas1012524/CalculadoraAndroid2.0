@@ -21,7 +21,11 @@
         <activity android:name=".calculobasico" />
         <activity android:name=".calculocientifico" />
         <activity android:name=".funcoesbasicas" />
-        <activity android:name=".maisfuncoesbasica"></activity>
+        <activity android:name=".maisfuncoesbasica" />
+        <activity android:name=".funcoescalculobinario" />
+        <activity android:name=".ConversaoBinario" />
+        <activity android:name=".calculoBCD" />
+        <activity android:name=".funcoesbinariasMenu"></activity>
     </application>
 
 </manifest>

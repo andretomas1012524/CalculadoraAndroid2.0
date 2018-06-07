@@ -1,3 +1,5 @@
+package com.example.andre.calculadoraandroid;
+
 /**
  * Created by Andre on 01-06-2018.
  */
@@ -44,6 +46,5 @@ public class FuncoesEconomicas {
         if(preco == 0){
             res
         }
-
     }*/
 }

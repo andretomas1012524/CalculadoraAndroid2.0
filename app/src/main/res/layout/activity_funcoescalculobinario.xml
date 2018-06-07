@@ -4,76 +4,61 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.andre.calculadoraandroid.maisfuncoesbasica">
+    tools:context="com.example.andre.calculadoraandroid.funcoescalculobinario">
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/textView9"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:fontFamily="sans-serif"
-        android:text="Outras funções para cálculo básico ou cientifico:"
-        android:textAppearance="@style/TextAppearance.AppCompat"
-        android:textSize="24sp"
+        android:text="Funcoes para calculo binario:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button12"
+        android:id="@+id/button18"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:fontFamily="sans-serif"
-        android:text="Potência (num1 ^ num2)"
-        android:textSize="24sp"
+        android:text="Converter para binario"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+        app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
     <Button
-        android:id="@+id/button13"
+        android:id="@+id/button19"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:fontFamily="sans-serif"
-        android:text="Raíz (Num1 ^ 1/Num2)"
+        android:text="Calculo BCD"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button12" />
+        app:layout_constraintTop_toBottomOf="@+id/button18" />
 
     <Button
-        android:id="@+id/button14"
+        android:id="@+id/button20"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:fontFamily="sans-serif"
-        android:text="Raiz predifinida(NUM1^N/NUM2)"
+        android:text="Calculo com numero de bits predifinido"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button13" />
-
-    <Button
-        android:id="@+id/button15"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="Fatorial"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button14" />
-
+        app:layout_constraintTop_toBottomOf="@+id/button19" />
 </android.support.constraint.ConstraintLayout>

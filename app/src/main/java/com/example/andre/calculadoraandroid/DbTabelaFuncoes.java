@@ -1,3 +1,5 @@
+package com.example.andre.calculadoraandroid;
+
 import android.database.sqlite.SQLiteDatabase;
 import android.provider.BaseColumns;
 
