@@ -7,7 +7,7 @@ package com.example.andre.calculadoraandroid;
 public class Funcoes {
     private int id;
     private String nome;
-    private String valor;
+    private double valor;
     private int idpais;
 
     public int getId() {
@@ -26,11 +26,11 @@ public class Funcoes {
         this.nome = nome;
     }
 
-    public String getValor() {
+    public double getValor() {
         return valor;
     }
 
-    public void setValor(String valor) {
+    public void setValor(double valor) {
         this.valor = valor;
     }
 

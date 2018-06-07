@@ -51,7 +51,7 @@ public class DbTabelaFuncoes implements BaseColumns {
         Funcoes funcoes = new Funcoes();
         funcoes.setId(cursor.getInt(posId));
         funcoes.setNome(cursor.getString(posnome));
-        funcoes.setValor(String.valueOf(cursor.getDouble(posvalor)));
+        funcoes.setValor(cursor.getDouble(posvalor));
         funcoes.setIdpais(cursor.getInt(posIDpais));
         return funcoes;
     }
