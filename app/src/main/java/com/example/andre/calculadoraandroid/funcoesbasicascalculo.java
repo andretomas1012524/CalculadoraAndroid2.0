@@ -7,38 +7,63 @@ package com.example.andre.calculadoraandroid;
 public class funcoesbasicascalculo {
     public double resultado=0.2f;
     public int resultadoI = 0;
-    public double resultadoang  = 0.2f;
+    { /*public double A = 0.2f;
+    public double B = 0.2f;
+    public int AI = 0;
+    public int potn = 0;
+    public int raiz = 0;
+    public int n = 0;
 
     // ------------ Definir números e operações privadas-------------- //
     private double getDoubleA(){
-        double a = 0.2f;
-        return a;
+        return A;
     }
 
     private double getDoubleB(){
-        double b = 0.2f;
-        return b;
+        return B;
     }
 
     private int getINTA(){
-        int a=0;
-        return a;
+        return AI;
     }
 
     private int getPOT(){
-        int potn = 0 ;
         return potn;
     }
 
     private int getRAIZ(){
-        int raiz = 0;
         return raiz;
     }
+
+    private void setIntA(int ai){
+         this.AI=ai;
+    }
+
+    private void setDoubleA(double a){
+        this.A=a;
+    }
+
+    private void setDoubleB(double b){
+        this.B = b;
+    }
+
+    private void setPotn(int potn){
+        this.potn=potn;
+    }
+
+    private void setRaiz(int raiz){
+        this.raiz=raiz;
+    }
+
+    private void setN(int n){
+        this.n = n ;
+    }
+
+    private int getN(){
+        return n;
+    }*/}
     // ----------------- Operações / Funcões ---------------- //
-    public double soma(){
-        double a,b;
-        a=getDoubleA();
-        b=getDoubleB();
+    public double soma(double a, double b){
         resultado = a + b;
         if (resultado > 999999999.99){
             return 0;
@@ -49,11 +74,7 @@ public class funcoesbasicascalculo {
         }
     }
 
-    public double subtracao(){
-        double a ;
-        a = getDoubleA();
-        double b;
-        b=getDoubleB();
+    public double subtracao(double a, double b){
         if(a<b){
             resultado = b-a;
         }else{
@@ -69,10 +90,7 @@ public class funcoesbasicascalculo {
 
     }
 
-    public double multiplicacao(){
-        double a,b;
-        a=getDoubleA();
-        b=getDoubleB();
+    public double multiplicacao(double a,double b){
         resultado = a * b;
         if (resultado > 999999999.99){
             return 0;
@@ -83,10 +101,10 @@ public class funcoesbasicascalculo {
         }
     }
 
-    public double DivisaoInteira(){
-        double a,b;
-        a=getDoubleA();
-        b=getDoubleB();
+    public double DivisaoInteira(double a, double b){
+        if(b==0){
+            return 0;
+        }
         resultado = a / b;
         if (resultado > 999999999){
             return 0;
@@ -97,10 +115,10 @@ public class funcoesbasicascalculo {
         }
     }
 
-    public double Divisao(){
-        double a,b;
-        a=getDoubleA();
-        b=getDoubleB();
+    public double Divisao(double a,double b){
+        if(b==0) {
+            return 0;
+        }
         resultado = a % b;
         if (resultado > 999999999.99){
             return 0;
@@ -110,11 +128,8 @@ public class funcoesbasicascalculo {
             return resultado;
         }
     }
-
-    public double mediaInteira(){
-        double a,b;
-        a=getDoubleA();
-        b=getDoubleB();
+    //media inteira (a+b)/2
+    public double mediaInteira(double a,double b){
         resultado = (a+b)/2;
         if (resultado > 999999999){
             return 0;
@@ -124,11 +139,8 @@ public class funcoesbasicascalculo {
             return resultado;
         }
     }
-
-    public double media(){
-        double a,b;
-        a= getDoubleA();
-        b=getDoubleB();
+    // media (a+b)%2
+    public double media(double a,double b){
         resultado = (a+b) % 2;
         if (resultado > 999999999.99){
             return 0;
@@ -138,25 +150,19 @@ public class funcoesbasicascalculo {
             return resultado;
         }
     }
-
-    public int potencia(){
-        int a;
-        a = getINTA();
-        int potn;
-        potn = getPOT();
+    // potencia (x^potn)
+    public double potencia(double a, double potn){
         resultado = Math.pow(a,potn);
-        if (resultadoI > 999999999){
+        if (resultado > 999999999){
             return 0;
-        }else if (resultadoI<-999999999){
+        }else if (resultado<-999999999){
             return 0;
         }else {
-            return resultadoI;
+            return resultado;
         }
     }
-
-    public double raiz(){
-        int a = getINTA();
-        int raiz = getRAIZ();
+    // raiz (x^(1%raiz))
+    public double raiz(double a,int raiz){
         resultado = Math.pow(a,1%raiz);
         if (resultado > 999999999.99){
             return 0;
@@ -167,14 +173,23 @@ public class funcoesbasicascalculo {
         }
     }
 
-     public int fatorial(){
-        int a = getINTA();
-        int i = 0 ;
+    /* public int fatorial(int a, int i){
         for (i=0;i<=a;i++){
             resultadoI = a * a-i;
         }
         return resultadoI;
+    }*/
+
+    // raiz com numero elevado a n (x^(n%raiz))
+    public double raizpred(double a,int raiz,int n){
+        resultado = Math.pow(a,n%raiz);
+        if (resultado > 999999999.99){
+            return 0;
+        }else if (resultado<-999999999.99){
+            return 0;
+        }else {
+            return resultado;
+        }
     }
 
-    //------------- Ainda falta material ---------------//
 }

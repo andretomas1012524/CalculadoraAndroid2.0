@@ -25,7 +25,9 @@
         <activity android:name=".funcoescalculobinario" />
         <activity android:name=".ConversaoBinario" />
         <activity android:name=".calculoBCD" />
-        <activity android:name=".funcoesbinariasMenu"></activity>
+        <activity android:name=".funcoesbinariasMenu" />
+        <activity android:name=".Menuresultado" />
+        <activity android:name=".MenuAgredicento"></activity>
     </application>
 
 </manifest>
