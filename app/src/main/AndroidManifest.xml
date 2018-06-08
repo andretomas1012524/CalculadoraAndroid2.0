@@ -27,7 +27,9 @@
         <activity android:name=".calculoBCD" />
         <activity android:name=".funcoesbinariasMenu" />
         <activity android:name=".Menuresultado" />
-        <activity android:name=".MenuAgredicento"></activity>
+        <activity android:name=".MenuAgredicento" />
+        <activity android:name=".MenuVistaMensalTotal" />
+        <activity android:name=".MenuGastoMensalPorPonto"></activity>
     </application>
 
 </manifest>
