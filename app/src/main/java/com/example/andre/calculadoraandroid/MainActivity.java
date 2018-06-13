@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void Cbinario(View view) {
-        Intent intent = new Intent(this,funcoesbinariascalculo.class);
+        Intent intent = new Intent(this,funcoescalculobinario.class);
         startActivity(intent);
     }
 
