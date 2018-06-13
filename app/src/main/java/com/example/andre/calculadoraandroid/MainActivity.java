@@ -1,7 +1,9 @@
 package com.example.andre.calculadoraandroid;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -9,5 +11,25 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+    }
+
+    public void Cbasico(View view) {
+        Intent intent = new Intent(this,calculobasico.class);
+        startActivity(intent);
+    }
+
+    public void Ccientifico(View view) {
+        Intent intent = new Intent(this,calculocientifico.class);
+        startActivity(intent);
+    }
+
+    public void Cbinario(View view) {
+        Intent intent = new Intent(this,funcoesbinariascalculo.class);
+        startActivity(intent);
+    }
+
+    public void Cpessoal(View view) {
+        Intent intent = new Intent(this,contaspessoais.class);
+        startActivity(intent);
     }
 }
