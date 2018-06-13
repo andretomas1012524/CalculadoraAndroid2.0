@@ -19,7 +19,7 @@ public class calculobasico extends AppCompatActivity {
     }
 
     public void calcularbasico(View view) {
-        Intent intent = new Intent(this,funcoesbasicas.class);
+        Intent intent = new Intent(this,Menuresultado.class);
 
         EditText editTextnum1 = (EditText)findViewById(R.id.nbasico1);
         EditText editTextnum2 = (EditText)findViewById(R.id.nbasico2);
@@ -60,7 +60,6 @@ public class calculobasico extends AppCompatActivity {
             editTextnum2.requestFocus();
             return;
         }
-
         intent.putExtra(Numerobasico1,num1);
         intent.putExtra(Numerobasico2,num2);
         startActivity(intent);

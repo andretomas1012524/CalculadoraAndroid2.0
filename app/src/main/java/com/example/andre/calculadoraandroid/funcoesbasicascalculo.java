@@ -5,8 +5,14 @@ package com.example.andre.calculadoraandroid;
  */
 
 public class funcoesbasicascalculo {
-    public double resultado=0.2f;
-    public int resultadoI = 0;
+    public double resultado;
+    public int resultadoI;
+    private double a;
+    private double b;
+    public funcoesbasicascalculo (double a ,double b){
+        this.a = a;
+        this.b = b;
+    }
     { /*public double A = 0.2f;
     public double B = 0.2f;
     public int AI = 0;
@@ -63,18 +69,18 @@ public class funcoesbasicascalculo {
         return n;
     }*/}
     // ----------------- Operações / Funcões ---------------- //
-    public double soma(double a, double b){
-        resultado = a + b;
-        if (resultado > 999999999.99){
+    public double soma(){
+
+        if (a > 999999999.99 || b > 999999999.99){
             return 0;
-        }else if (resultado<-999999999.99){
+        }else if (a<-999999999.99||b<-999999999.99){
             return 0;
         }else {
-            return resultado;
+            return a+b;
         }
     }
 
-    public double subtracao(double a, double b){
+    public double subtracao(){
         if(a<b){
             resultado = b-a;
         }else{
@@ -90,7 +96,7 @@ public class funcoesbasicascalculo {
 
     }
 
-    public double multiplicacao(double a,double b){
+    public double multiplicacao(){
         resultado = a * b;
         if (resultado > 999999999.99){
             return 0;
@@ -101,7 +107,7 @@ public class funcoesbasicascalculo {
         }
     }
 
-    public double DivisaoInteira(double a, double b){
+    public double DivisaoInteira(){
         if(b==0){
             return 0;
         }
@@ -115,7 +121,7 @@ public class funcoesbasicascalculo {
         }
     }
 
-    public double Divisao(double a,double b){
+    public double Divisao(){
         if(b==0) {
             return 0;
         }
@@ -129,7 +135,7 @@ public class funcoesbasicascalculo {
         }
     }
     //media inteira (a+b)/2
-    public double mediaInteira(double a,double b){
+    public double mediaInteira(){
         resultado = (a+b)/2;
         if (resultado > 999999999){
             return 0;
@@ -140,7 +146,7 @@ public class funcoesbasicascalculo {
         }
     }
     // media (a+b)%2
-    public double media(double a,double b){
+    public double media(){
         resultado = (a+b) % 2;
         if (resultado > 999999999.99){
             return 0;
@@ -151,8 +157,8 @@ public class funcoesbasicascalculo {
         }
     }
     // potencia (x^potn)
-    public double potencia(double a, double potn){
-        resultado = Math.pow(a,potn);
+    public double potencia(){
+        resultado = Math.pow(a,b);
         if (resultado > 999999999){
             return 0;
         }else if (resultado<-999999999){

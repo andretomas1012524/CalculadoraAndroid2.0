@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void Cbasico(View view) {
-        Intent intent = new Intent(this,calculobasico.class);
+        Intent intent = new Intent(this,funcoesbasicas.class);
         startActivity(intent);
     }
 
