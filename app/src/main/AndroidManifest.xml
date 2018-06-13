@@ -29,7 +29,8 @@
         <activity android:name=".Menuresultado" />
         <activity android:name=".MenuAgredicento" />
         <activity android:name=".MenuVistaMensalTotal" />
-        <activity android:name=".MenuGastoMensalPorPonto"></activity>
+        <activity android:name=".MenuGastoMensalPorPonto" />
+        <activity android:name=".Ativityrecicler"></activity>
     </application>
 
 </manifest>
