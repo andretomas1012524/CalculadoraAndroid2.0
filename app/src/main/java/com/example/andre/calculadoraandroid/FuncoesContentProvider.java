@@ -19,14 +19,17 @@ public class FuncoesContentProvider extends ContentProvider {
     public static final int Funcoes_ID = 101;
     public static final int Pais_Uri = 200;
     public static final int Pais_ID = 201;
+    public static final String Autoridade = "com.example.andre.calculadoraandroid";
+    public static final String MultiplosItens = "vnd.android.cursor.dir";
+    public static final String ItemSimples = "vnd.android.cursor.item";
     DbEconomicaOpenHelper dbEconomicaOpenHelper;
 
     private static UriMatcher getEconomiaUnimatcher() {
         UriMatcher uriMatcher = new UriMatcher(UriMatcher.NO_MATCH);
-        uriMatcher.addURI("com.example.andre.calculadoraandroid", "Funcoes", Uri_Funcoes);
-        uriMatcher.addURI("com.example.andre.calculadoraandroid", "Funcoes/#", Funcoes_ID);
-        uriMatcher.addURI("com.example.andre.calculadoraandroid", "Pais", Pais_Uri);
-        uriMatcher.addURI("com.example.andre.calculadoraandroid", "Pais/#", Pais_ID);
+        uriMatcher.addURI(Autoridade, "Funcoes", Uri_Funcoes);
+        uriMatcher.addURI(Autoridade, "Funcoes/#", Funcoes_ID);
+        uriMatcher.addURI(Autoridade, "Pais", Pais_Uri);
+        uriMatcher.addURI(Autoridade, "Pais/#", Pais_ID);
         return uriMatcher;
 
     }
@@ -68,7 +71,21 @@ public class FuncoesContentProvider extends ContentProvider {
     @Nullable
     @Override
     public String getType(@NonNull Uri uri) {
-        return null;
+        UriMatcher matcher = getEconomiaUnimatcher();
+
+        switch (matcher.match(uri)){
+            case Uri_Funcoes:
+                return MultiplosItens + "/" + Autoridade + "/" + DbTabelaFuncoes.Funcoes;
+            case Pais_Uri:
+                return MultiplosItens + "/" + Autoridade + "/" + DbTabelaPais.Pais;
+            case Funcoes_ID:
+                return ItemSimples + "/" + Autoridade + "/" + DbTabelaFuncoes.Funcoes;
+            case Pais_ID:
+                return ItemSimples + "/" + Autoridade + "/" + DbTabelaPais.Pais;
+            default:
+                throw new UnsupportedOperationException("Uri inválido !! :" + uri);
+        }
+
     }
 
     @Nullable
