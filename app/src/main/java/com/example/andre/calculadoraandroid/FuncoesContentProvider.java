@@ -21,12 +21,12 @@ public class FuncoesContentProvider extends ContentProvider {
     public static final int Pais_ID = 201;
     DbEconomicaOpenHelper dbEconomicaOpenHelper;
 
-    private static UriMatcher getEconomiaUnimatcher(){
+    private static UriMatcher getEconomiaUnimatcher() {
         UriMatcher uriMatcher = new UriMatcher(UriMatcher.NO_MATCH);
-        uriMatcher.addURI("com.example.andre.calculadoraandroid","Funcoes", Uri_Funcoes);
-        uriMatcher.addURI("com.example.andre.calculadoraandroid","Funcoes/#", Funcoes_ID);
-        uriMatcher.addURI("com.example.andre.calculadoraandroid","Pais", Pais_Uri);
-        uriMatcher.addURI("com.example.andre.calculadoraandroid","Pais/#", Pais_ID);
+        uriMatcher.addURI("com.example.andre.calculadoraandroid", "Funcoes", Uri_Funcoes);
+        uriMatcher.addURI("com.example.andre.calculadoraandroid", "Funcoes/#", Funcoes_ID);
+        uriMatcher.addURI("com.example.andre.calculadoraandroid", "Pais", Pais_Uri);
+        uriMatcher.addURI("com.example.andre.calculadoraandroid", "Pais/#", Pais_ID);
         return uriMatcher;
 
     }
@@ -47,10 +47,10 @@ public class FuncoesContentProvider extends ContentProvider {
 
         UriMatcher matcher = getEconomiaUnimatcher();
 
-        switch (matcher.match(uri)){
+        switch (matcher.match(uri)) {
             case Uri_Funcoes:
-                return new DbTabelaFuncoes(bd).quarry(projecion,selection,selectionargs,null,null,sortOrder);
-                break;
+                return new DbTabelaFuncoes(bd).quarry(projecion, selection, selectionargs, null, null, sortOrder);
+            break;
             case Funcoes_ID:
                 break;
             case Pais_Uri:
@@ -58,7 +58,7 @@ public class FuncoesContentProvider extends ContentProvider {
             case Pais_ID:
                 break;
             default:
-                throw new UnsupportedOperationException("Uri inválido !! :"+ uri);
+                throw new UnsupportedOperationException("Uri inválido !! :" + uri);
         }
 
 
@@ -76,40 +76,82 @@ public class FuncoesContentProvider extends ContentProvider {
     public Uri insert(@NonNull Uri uri, @Nullable ContentValues contentValues) {
         SQLiteDatabase bd = dbEconomicaOpenHelper.getWritableDatabase();
 
-        long id;
+        long id = -1;
 
         UriMatcher matcher = getEconomiaUnimatcher();
 
-        switch (matcher.match(uri)){
+        switch (matcher.match(uri)) {
             case Uri_Funcoes:
                 id = new DbTabelaFuncoes(bd).insert(contentValues);
                 break;
             case Pais_Uri:
-                 id = new DbTabelaPais(bd).insert(contentValues);
+                id = new DbTabelaPais(bd).insert(contentValues);
                 break;
             default:
-                throw new UnsupportedOperationException("Uri inválido !! :"+ uri);
+                throw new UnsupportedOperationException("Uri inválido !! :" + uri);
         }
-        if (id>0){
+        if (id > 0) {
             NotifyChanges(uri);
             return Uri.withAppendedPath(uri, Long.toString(id));
-        }else {
+        } else {
             throw new SQLException("Não conseguiu inserir no registo");
         }
 
     }
 
     private void NotifyChanges(@NonNull Uri uri) {
-        getContext().getContentResolver().notifyChange(uri,null);
+        getContext().getContentResolver().notifyChange(uri, null);
     }
 
     @Override
     public int delete(@NonNull Uri uri, @Nullable String s, @Nullable String[] strings) {
-        return 0;
+        SQLiteDatabase bd = dbEconomicaOpenHelper.getWritableDatabase();
+
+        String id = uri.getLastPathSegment();
+
+        UriMatcher matcher = getEconomiaUnimatcher();
+
+        int rows = 0;
+
+        switch (matcher.match(uri)) {
+            case Funcoes_ID:
+                rows = new DbTabelaFuncoes(bd).delete(DbTabelaFuncoes._ID + "=?", new String[]{id});
+                break;
+            case Pais_ID:
+                rows = new DbTabelaPais(bd).delete(DbTabelaPais._ID + "=?", new String[]{id});
+                break;
+            default:
+                throw new UnsupportedOperationException("Uri inválido !! :" + uri);
+        }
+
+        if (rows > 0) NotifyChanges(uri);
+        return rows;
+
     }
 
     @Override
     public int update(@NonNull Uri uri, @Nullable ContentValues contentValues, @Nullable String s, @Nullable String[] strings) {
-        return 0;
+        SQLiteDatabase bd = dbEconomicaOpenHelper.getWritableDatabase();
+
+        String id = uri.getLastPathSegment();
+
+        UriMatcher matcher = getEconomiaUnimatcher();
+
+        int rows = 0;
+
+        switch (matcher.match(uri)) {
+            case Funcoes_ID:
+                rows = new DbTabelaFuncoes(bd).update(contentValues, DbTabelaFuncoes._ID + "=?", new String[]{id});
+                break;
+            case Pais_ID:
+                rows = new DbTabelaPais(bd).update(contentValues, DbTabelaPais._ID + "=?", new String[]{id});
+                break;
+            default:
+                throw new UnsupportedOperationException("Uri inválido !! :" + uri);
+        }
+
+        if (rows > 0) NotifyChanges(uri);
+        return rows;
+
     }
 }
