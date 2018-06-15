@@ -9,7 +9,7 @@ import android.database.sqlite.SQLiteOpenHelper;
  */
 
 public class DbEconomicaOpenHelper extends SQLiteOpenHelper {
-
+    private static final boolean Producao = false;
     public static final String DATABASE_NAME = "Economia.db";
     public static final int DATABASE_VERSION = 1;
 
@@ -24,6 +24,38 @@ public class DbEconomicaOpenHelper extends SQLiteOpenHelper {
         dbTabelaFuncoes.create();
         DbTabelaPais dbTabelaPais = new DbTabelaPais(db);
         dbTabelaPais.create();
+
+        if(!Producao){
+            seed(db);
+        }
+    }
+
+    private void seed(SQLiteDatabase db) {
+        DbTabelaPais dbTabelaPais = new DbTabelaPais(db);
+
+        Pais pais = new Pais();
+        pais.setNome("portugal");
+        int idpais = (int) dbTabelaPais.insert(DbTabelaPais.getContentValues(pais));
+
+        DbTabelaFuncoes dbTabelaFuncoes = new DbTabelaFuncoes(db);
+
+        Funcoes funcoes= new Funcoes();
+        funcoes.setNome("IVA");
+        funcoes.setIdpais(idpais);
+        funcoes.setValor(9.99);
+        dbTabelaFuncoes.insert(DbTabelaFuncoes.getContentValues(funcoes));
+
+        funcoes=new Funcoes();
+        funcoes.setNome("IMI");
+        funcoes.setIdpais(idpais);
+        funcoes.setValor(10);
+        dbTabelaFuncoes.insert(DbTabelaFuncoes.getContentValues(funcoes));
+
+        funcoes=new Funcoes();
+        funcoes.setNome("Propinas");
+        funcoes.setIdpais(idpais);
+        funcoes.setValor(20);
+        dbTabelaFuncoes.insert(DbTabelaFuncoes.getContentValues(funcoes));
     }
 
     @Override
