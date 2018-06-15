@@ -1,11 +1,13 @@
 package com.example.andre.calculadoraandroid;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+import android.widget.TextView;
 
 /**
  * Created by Andre on 13-06-2018.
@@ -13,7 +15,14 @@ import android.widget.ListView;
 
 public class EconomiaCursorAdapter extends RecyclerView.Adapter<EconomiaCursorAdapter.EconomiaViewHolder> {
     private Context context;
+    private Cursor cursor=null;
 
+    public void refreshData(Cursor cursor){
+        if(this.cursor!=cursor){
+            this.cursor = cursor;
+            notifyDataSetChanged();
+        }
+    }
 
     public EconomiaCursorAdapter(Context context) {
         this.context = context;
@@ -70,7 +79,11 @@ public class EconomiaCursorAdapter extends RecyclerView.Adapter<EconomiaCursorAd
      */
     @Override
     public void onBindViewHolder(EconomiaViewHolder holder, int position) {
+        cursor.moveToPosition(position);
 
+        Funcoes funcoes = DbTabelaFuncoes.getCurrentFuncoes(cursor);
+
+        holder.setFuncao(funcoes);
     }
 
     /**
@@ -80,13 +93,26 @@ public class EconomiaCursorAdapter extends RecyclerView.Adapter<EconomiaCursorAd
      */
     @Override
     public int getItemCount() {
-        return 0;
+        if (cursor==null){
+            return 0;
+        }
+        return cursor.getCount();
     }
 
     public class EconomiaViewHolder extends RecyclerView.ViewHolder{
+        private TextView textViewNome;
+        private TextView textViewpreco;
 
         public EconomiaViewHolder(View itemView) {
             super(itemView);
+
+            textViewNome=(TextView)itemView.findViewById(R.id.textViewNome);
+            textViewpreco=(TextView)itemView.findViewById(R.id.textViewPreco);
+        }
+
+        public void setFuncao(Funcoes funcoes) {
+            textViewNome.setText(funcoes.getNome());
+            textViewpreco.setText(String.format("%.2f",funcoes.getValor() + "€"));
         }
     }
 }

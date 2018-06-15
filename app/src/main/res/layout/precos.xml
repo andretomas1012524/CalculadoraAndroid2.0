@@ -7,7 +7,7 @@
     tools:context="com.example.andre.calculadoraandroid.PrecosActivity">
 
     <TextView
-        android:id="@+id/textView16"
+        android:id="@+id/textViewNome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -17,7 +17,7 @@
         tools:text="Material" />
 
     <TextView
-        android:id="@+id/textView22"
+        android:id="@+id/textViewPreco"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
