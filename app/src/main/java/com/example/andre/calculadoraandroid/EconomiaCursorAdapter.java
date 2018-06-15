@@ -1,6 +1,8 @@
 package com.example.andre.calculadoraandroid;
 
+import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
@@ -10,6 +12,12 @@ import android.widget.ListView;
  */
 
 public class EconomiaCursorAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+    private Context context;
+
+
+    public EconomiaCursorAdapter(Context context) {
+        this.context = context;
+    }
 
     /**
      * Called when RecyclerView needs a new {@link ViewHolder} of the given type to represent
@@ -33,7 +41,11 @@ public class EconomiaCursorAdapter extends RecyclerView.Adapter<RecyclerView.Vie
      */
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        return null;
+        /*View item = LayoutInflater.from(context).inflate(R.layout.precos,parent,false);
+
+        return new RecyclerView.ViewHolder(item);*/
+
+
     }
 
     /**

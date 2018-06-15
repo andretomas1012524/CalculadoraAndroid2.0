@@ -30,7 +30,8 @@
         <activity android:name=".MenuAgredicento" />
         <activity android:name=".MenuVistaMensalTotal" />
         <activity android:name=".MenuGastoMensalPorPonto" />
-        <activity android:name=".Ativityrecicler"></activity>
+        <activity android:name=".Ativityrecicler" />
+        <activity android:name=".PrecosActivity"></activity>
     </application>
 
 </manifest>
