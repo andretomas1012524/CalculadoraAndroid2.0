@@ -15,11 +15,13 @@ import android.support.annotation.Nullable;
  */
 
 public class FuncoesContentProvider extends ContentProvider {
+    public static final String Autoridade = "com.example.andre.calculadoraandroid";
+    public  static final Uri Base_uri = Uri.parse("content ://" + Autoridade);
+    public static final Uri Economia_URI = Uri.withAppendedPath(Base_uri,DbTabelaFuncoes.Funcoes);
     public static final int Uri_Funcoes = 100;
     public static final int Funcoes_ID = 101;
     public static final int Pais_Uri = 200;
     public static final int Pais_ID = 201;
-    public static final String Autoridade = "com.example.andre.calculadoraandroid";
     public static final String MultiplosItens = "vnd.android.cursor.dir";
     public static final String ItemSimples = "vnd.android.cursor.item";
     DbEconomicaOpenHelper dbEconomicaOpenHelper;
