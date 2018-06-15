@@ -50,22 +50,20 @@ public class FuncoesContentProvider extends ContentProvider {
 
         UriMatcher matcher = getEconomiaUnimatcher();
 
-        /*switch (matcher.match(uri)) {
+        switch (matcher.match(uri)) {
             case Uri_Funcoes:
-                return new DbTabelaFuncoes(bd).quarry(projecion, selection, selectionargs, null, null, sortOrder);
-            break;
+                return new DbTabelaFuncoes(bd).quarry(strings, s, strings1, null, null, s1);
             case Funcoes_ID:
-                break;
+                return new DbTabelaFuncoes(bd).quarry(strings, DbTabelaFuncoes._ID + "=?", new String[] { id }, null, null, null);
             case Pais_Uri:
-                break;
+                return new DbTabelaPais(bd).quarry(strings, s, strings1, null, null, s1);
             case Pais_ID:
-                break;
+                return new DbTabelaPais(bd).quarry(strings, DbTabelaPais._ID + "=?", new String[] { id }, null, null, null);
             default:
                 throw new UnsupportedOperationException("Uri inválido !! :" + uri);
-        }*/
+        }
 
 
-        return null;
     }
 
     @Nullable
