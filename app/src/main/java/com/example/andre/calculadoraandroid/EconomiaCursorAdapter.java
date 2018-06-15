@@ -11,7 +11,7 @@ import android.widget.ListView;
  * Created by Andre on 13-06-2018.
  */
 
-public class EconomiaCursorAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class EconomiaCursorAdapter extends RecyclerView.Adapter<EconomiaCursorAdapter.EconomiaViewHolder> {
     private Context context;
 
 
@@ -40,10 +40,10 @@ public class EconomiaCursorAdapter extends RecyclerView.Adapter<RecyclerView.Vie
      * @see #onBindViewHolder(ViewHolder, int)
      */
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        /*View item = LayoutInflater.from(context).inflate(R.layout.precos,parent,false);
+    public EconomiaViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View item = LayoutInflater.from(context).inflate(R.layout.precos,parent,false);
 
-        return new RecyclerView.ViewHolder(item);*/
+        return new EconomiaViewHolder(item);
 
 
     }
@@ -69,7 +69,7 @@ public class EconomiaCursorAdapter extends RecyclerView.Adapter<RecyclerView.Vie
      * @param position The position of the item within the adapter's data set.
      */
     @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(EconomiaViewHolder holder, int position) {
 
     }
 
