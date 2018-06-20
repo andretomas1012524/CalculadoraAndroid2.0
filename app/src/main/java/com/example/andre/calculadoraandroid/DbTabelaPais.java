@@ -30,7 +30,7 @@ public class DbTabelaPais implements BaseColumns {
     public static ContentValues getContentValues(Pais nome){
         ContentValues values = new ContentValues();
 
-
+        values.put(_ID, nome.getId());
         values.put(Nome,nome.getNome());
         return values;
     }

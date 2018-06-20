@@ -24,7 +24,6 @@ public class FuncoesContentProvider extends ContentProvider {
     public static final int Pais_ID = 201;
     public static final String MultiplosItens = "vnd.android.cursor.dir";
     public static final String ItemSimples = "vnd.android.cursor.item";
-    public static final Uri Pais_URI = Uri.withAppendedPath(Base_uri, DbTabelaPais.Pais);
     DbEconomicaOpenHelper dbEconomicaOpenHelper;
 
     private static UriMatcher getEconomiaUnimatcher() {

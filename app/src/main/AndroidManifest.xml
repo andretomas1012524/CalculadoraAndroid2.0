@@ -41,14 +41,7 @@
         <activity android:name=".calculobasico6" />
         <activity android:name=".calculobasico7" />
         <activity android:name=".calculobasico8" />
-        <activity android:name=".calculobasico9" />
-
-        <provider
-            android:name=".FuncoesContentProvider"
-            android:authorities="com.example.andre.calculadoraandroid"
-            android:exported="false" />
-
-        <activity android:name=".EditEconomia"></activity>
+        <activity android:name=".calculobasico9"></activity>
     </application>
 
 </manifest>
