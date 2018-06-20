@@ -4,6 +4,8 @@ import android.app.LoaderManager;
 import android.content.Intent;
 import android.content.Loader;
 import android.database.Cursor;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v4.content.CursorLoader;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,7 +13,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
-public class Ativityrecicler extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor>, android.support.v4.app.LoaderManager.LoaderCallbacks<Object> {
+public class Ativityrecicler extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor>{
 
     private EconomiaCursorAdapter EconomiaCursorAdapter;
     private static final int CursorLoaderID = 0;
@@ -36,7 +38,7 @@ public class Ativityrecicler extends AppCompatActivity implements LoaderManager.
                  editEconomia();
              }
         });
-        getSupportLoaderManager().restartLoader(CursorLoaderID, null, this);
+        getSupportLoaderManager().restartLoader(CursorLoaderID, null, (android.support.v4.app.LoaderManager.LoaderCallbacks<Object>) this);
     }
 
     private void editEconomia() {
@@ -48,13 +50,15 @@ public class Ativityrecicler extends AppCompatActivity implements LoaderManager.
     @Override
     protected void onResume() {
         super.onResume();
-        getSupportLoaderManager().restartLoader(CursorLoaderID, null, this);
+        getSupportLoaderManager().restartLoader(CursorLoaderID, null, (android.support.v4.app.LoaderManager.LoaderCallbacks<Object>) this);
     }
 
+
+    @NonNull
     @Override
-    public Loader<Cursor> onCreateLoader(int i, Bundle bundle) {
-        if(i == CursorLoaderID){
-            new CursorLoader(this,FuncoesContentProvider.Economia_URI,DbTabelaFuncoes.All_colunas,null,null,null);
+    public Loader<Cursor> onCreateLoader(int id, @Nullable Bundle args) {
+        if (id == CursorLoaderID) {
+            return new android.content.CursorLoader(this, FuncoesContentProvider.Pais_URI, DbTabelaPais.All_colunas, null, null, null);
         }
         return null;
     }
