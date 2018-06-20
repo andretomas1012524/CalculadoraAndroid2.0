@@ -37,7 +37,11 @@
         <activity android:name=".calculobasico2" />
         <activity android:name=".calculobasico3" />
         <activity android:name=".calculobasico4" />
-        <activity android:name=".calculobasico5"></activity>
+        <activity android:name=".calculobasico5" />
+        <activity android:name=".calculobasico6" />
+        <activity android:name=".calculobasico7" />
+        <activity android:name=".calculobasico8" />
+        <activity android:name=".calculobasico9"></activity>
     </application>
 
 </manifest>
