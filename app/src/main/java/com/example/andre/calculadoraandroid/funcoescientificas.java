@@ -13,17 +13,22 @@ public class funcoescientificas extends AppCompatActivity {
     }
 
     public void scient(View view) {
+
     }
 
     public void subcient(View view) {
+
     }
 
     public void multcient(View view) {
+
     }
 
     public void divcient(View view) {
+
     }
 
     public void divIcient(View view) {
+
     }
 }
