@@ -1,6 +1,7 @@
 package com.example.andre.calculadoraandroid;
 
 import android.app.LoaderManager;
+import android.content.Intent;
 import android.content.Loader;
 import android.database.Cursor;
 import android.support.v4.content.CursorLoader;
@@ -8,25 +9,46 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 
-public class Ativityrecicler extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor>{
+public class Ativityrecicler extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor>, android.support.v4.app.LoaderManager.LoaderCallbacks<Object> {
 
-    public static final int CursorLoaderID = 0;
     private EconomiaCursorAdapter EconomiaCursorAdapter;
+    private static final int CursorLoaderID = 0;
+    public static final String ECONOMIA_ID="ECONOMIA_ID";
+    private RecyclerView recyclerViewEconomia;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ativityrecicler);
 
-        RecyclerView recyclerViewPrecos = (RecyclerView) findViewById(R.id.RecyclerViewPrecos);
+        recyclerViewEconomia = (RecyclerView) findViewById(R.id.RecyclerViewPrecos);
 
-        recyclerViewPrecos.setLayoutManager(new LinearLayoutManager(this));
+        recyclerViewEconomia.setLayoutManager(new LinearLayoutManager(this));
 
         EconomiaCursorAdapter = new EconomiaCursorAdapter(this);
-        recyclerViewPrecos.setAdapter(EconomiaCursorAdapter);
+        recyclerViewEconomia.setAdapter(EconomiaCursorAdapter);
 
-        getLoaderManager().initLoader(CursorLoaderID,null,this);
+        EconomiaCursorAdapter.setViewHolderClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View view) {
+                 editEconomia();
+             }
+        });
+        getSupportLoaderManager().restartLoader(CursorLoaderID, null, this);
+    }
+
+    private void editEconomia() {
+        int id = EconomiaCursorAdapter.getLastEconomiaClicked();
+        Intent intent = new Intent(this,EditEconomia.class);
+        intent.putExtra(ECONOMIA_ID,id);
+        startActivity(intent);
+    }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        getSupportLoaderManager().restartLoader(CursorLoaderID, null, this);
     }
 
     @Override
