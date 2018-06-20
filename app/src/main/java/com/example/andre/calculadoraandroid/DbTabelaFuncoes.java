@@ -35,7 +35,7 @@ public class DbTabelaFuncoes implements BaseColumns {
     public static ContentValues getContentValues(Funcoes funcoes){
         ContentValues values = new ContentValues();
 
-        values.put(_ID, funcoes.getId());
+
         values.put(Nome,funcoes.getNome());
         values.put(Valor,funcoes.getValor());
         values.put(ID_Pais,funcoes.getIdpais());
@@ -70,6 +70,7 @@ public class DbTabelaFuncoes implements BaseColumns {
     }
 
     public Cursor quarry(String[] colunas,String seletion, String[] seletionargs,String groupBy, String having,String orderby){
-        return db.query(Funcoes,colunas,seletion,seletionargs,groupBy,having,orderby);
+        Cursor cursor = db.query(Funcoes,colunas,seletion,seletionargs,groupBy,having,orderby);
+        return cursor;
     }
 }

@@ -16,6 +16,8 @@ import android.widget.TextView;
 public class EconomiaCursorAdapter extends RecyclerView.Adapter<EconomiaCursorAdapter.EconomiaViewHolder> {
     private Context context;
     private Cursor cursor=null;
+    private View.OnClickListener viewHolderClickListener = null;
+    private int lastEconomiaClicked = -1;
 
     public void refreshData(Cursor cursor){
         if(this.cursor!=cursor){
@@ -27,6 +29,13 @@ public class EconomiaCursorAdapter extends RecyclerView.Adapter<EconomiaCursorAd
     public EconomiaCursorAdapter(Context context) {
         this.context = context;
     }
+    public void setViewHolderClickListener(View.OnClickListener viewHolderClickListener) {
+        this.viewHolderClickListener = viewHolderClickListener;
+    }
+    public int getLastEconomiaClicked() {
+        return lastEconomiaClicked;
+    }
+
 
     /**
      * Called when RecyclerView needs a new {@link ViewHolder} of the given type to represent
@@ -99,20 +108,37 @@ public class EconomiaCursorAdapter extends RecyclerView.Adapter<EconomiaCursorAd
         return cursor.getCount();
     }
 
-    public class EconomiaViewHolder extends RecyclerView.ViewHolder{
+    public class EconomiaViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         private TextView textViewNome;
         private TextView textViewpreco;
+        private int economiaID;
 
         public EconomiaViewHolder(View itemView) {
             super(itemView);
 
             textViewNome=(TextView)itemView.findViewById(R.id.textViewNome);
             textViewpreco=(TextView)itemView.findViewById(R.id.textViewPreco);
+
+            itemView.setOnClickListener(this);
         }
 
         public void setFuncao(Funcoes funcoes) {
             textViewNome.setText(funcoes.getNome());
             textViewpreco.setText(String.format("%.2f",funcoes.getValor() + "€"));
+            economiaID=funcoes.getId();
+        }
+
+        @Override
+        public void onClick(View view) {
+            int position = getAdapterPosition();
+            if (position == RecyclerView.NO_POSITION) {
+                return;
+            }
+            if (viewHolderClickListener != null) {
+                lastEconomiaClicked = economiaID;
+                viewHolderClickListener.onClick(view);
+            }
+
         }
     }
 }

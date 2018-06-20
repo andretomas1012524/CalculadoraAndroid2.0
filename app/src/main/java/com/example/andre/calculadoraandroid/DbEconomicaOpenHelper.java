@@ -37,6 +37,16 @@ public class DbEconomicaOpenHelper extends SQLiteOpenHelper {
         pais.setNome("portugal");
         int idpais = (int) dbTabelaPais.insert(DbTabelaPais.getContentValues(pais));
 
+        pais=new Pais();
+        pais.setNome("Espanha");
+        int idpaisE = (int) dbTabelaPais.insert(DbTabelaPais.getContentValues(pais));
+
+
+        pais=new Pais();
+        pais.setNome("França");
+        int idpaisF= (int) dbTabelaPais.insert(DbTabelaPais.getContentValues(pais));
+
+
         DbTabelaFuncoes dbTabelaFuncoes = new DbTabelaFuncoes(db);
 
         Funcoes funcoes= new Funcoes();
@@ -47,13 +57,13 @@ public class DbEconomicaOpenHelper extends SQLiteOpenHelper {
 
         funcoes=new Funcoes();
         funcoes.setNome("IMI");
-        funcoes.setIdpais(idpais);
+        funcoes.setIdpais(idpaisE);
         funcoes.setValor(10);
         dbTabelaFuncoes.insert(DbTabelaFuncoes.getContentValues(funcoes));
 
         funcoes=new Funcoes();
         funcoes.setNome("Propinas");
-        funcoes.setIdpais(idpais);
+        funcoes.setIdpais(idpaisF);
         funcoes.setValor(20);
         dbTabelaFuncoes.insert(DbTabelaFuncoes.getContentValues(funcoes));
     }
