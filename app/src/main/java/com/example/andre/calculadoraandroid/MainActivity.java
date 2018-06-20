@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void Ccientifico(View view) {
-        Intent intent = new Intent(this,calculocientifico.class);
+        Intent intent = new Intent(this,funcoescientificas.class);
         startActivity(intent);
     }
 
