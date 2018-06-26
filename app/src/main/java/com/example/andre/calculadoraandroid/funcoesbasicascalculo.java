@@ -82,29 +82,16 @@ public class funcoesbasicascalculo {
 
     public double subtracao(){
         if(a<b){
-            resultado = b-a;
-        }else{
-            resultado = a-b;
+            return b-a;
+        }else if(a>=b){
+            return a-b;
         }
-        if (resultado > 999999999.99){
-            return 0;
-        }else if (resultado<-999999999.99){
-            return 0;
-        }else {
-            return resultado;
-        }
-
+        return a-b;
     }
 
     public double multiplicacao(){
-        resultado = a * b;
-        if (resultado > 999999999.99){
-            return 0;
-        }else if (resultado<-999999999.99){
-            return 0;
-        }else {
-            return resultado;
-        }
+        return   a * b;
+
     }
 
     public double DivisaoInteira(){

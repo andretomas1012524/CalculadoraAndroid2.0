@@ -48,7 +48,8 @@
             android:authorities="com.example.andre.calculadoraandroid"
             android:exported="false" />
 
-        <activity android:name=".EditEconomia"></activity>
+        <activity android:name=".EditEconomia" />
+        <activity android:name=".Menuresultado2"></activity>
     </application>
 
 </manifest>

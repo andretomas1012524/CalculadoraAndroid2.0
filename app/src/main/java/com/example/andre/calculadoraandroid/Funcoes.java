@@ -8,7 +8,7 @@ public class Funcoes {
     private int id;
     private String nome;
     private double valor;
-    private int idpais;
+    private int idFinanca;
 
     public int getId() {
         return id;
@@ -34,11 +34,11 @@ public class Funcoes {
         this.valor = valor;
     }
 
-    public int getIdpais() {
-        return idpais;
+    public int getIdFinanca() {
+        return idFinanca;
     }
 
-    public void setIdpais(int idpais) {
-        this.idpais = idpais;
+    public void setIdFinanca(int idFinanca) {
+        this.idFinanca = idFinanca;
     }
 }

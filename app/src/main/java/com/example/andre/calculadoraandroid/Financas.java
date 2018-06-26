@@ -1,11 +1,11 @@
 package com.example.andre.calculadoraandroid;
 
 /**
- * Created by Andre on 31-05-2018.
+ * Created by Andre on 26-06-2018.
  */
 
-public class Pais {
-    /*private int id;
+public class Financas {
+    private int id;
     private String nome;
 
     public int getId() {
@@ -22,5 +22,5 @@ public class Pais {
 
     public void setNome(String nome) {
         this.nome = nome;
-    }*/
+    }
 }

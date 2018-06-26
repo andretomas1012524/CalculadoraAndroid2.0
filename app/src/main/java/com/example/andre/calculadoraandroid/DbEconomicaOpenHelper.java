@@ -22,8 +22,8 @@ public class DbEconomicaOpenHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         DbTabelaFuncoes dbTabelaFuncoes = new DbTabelaFuncoes(db);
         dbTabelaFuncoes.create();
-        DbTabelaPais dbTabelaPais = new DbTabelaPais(db);
-        dbTabelaPais.create();
+        DbTabelaFinancas dbTabelaFinancas = new DbTabelaFinancas(db);
+        dbTabelaFinancas.create();
 
         if(!Producao){
             seed(db);
@@ -31,37 +31,37 @@ public class DbEconomicaOpenHelper extends SQLiteOpenHelper {
     }
 
     private void seed(SQLiteDatabase db) {
-        DbTabelaPais dbTabelaPais = new DbTabelaPais(db);
+        DbTabelaFinancas dbTabelaFinancas = new DbTabelaFinancas(db);
 
-        Pais pais = new Pais();
-        pais.setNome("portugal");
-        int idpais = (int) dbTabelaPais.insert(DbTabelaPais.getContentValues(pais));
+        Financas Financas = new Financas();
+        Financas.setNome("Financa");
+        int idFinanca0 = (int) dbTabelaFinancas.insert(DbTabelaFinancas.getContentValues(Financas));
 
-        pais=new Pais();
-        pais.setNome("Espanha");
-        int idpaisE = (int) dbTabelaPais.insert(DbTabelaPais.getContentValues(pais));
-        pais=new Pais();
-        pais.setNome("França");
-        int idpaisF= (int) dbTabelaPais.insert(DbTabelaPais.getContentValues(pais));
+        Financas=new Financas();
+        Financas.setNome("Financa1");
+        int idFinanca1 = (int) dbTabelaFinancas.insert(DbTabelaFinancas.getContentValues(Financas));
+        Financas=new Financas();
+        Financas.setNome("Financa2");
+        int idFinanca2= (int) dbTabelaFinancas.insert(DbTabelaFinancas.getContentValues(Financas));
 
 
         DbTabelaFuncoes dbTabelaFuncoes = new DbTabelaFuncoes(db);
 
         Funcoes funcoes= new Funcoes();
         funcoes.setNome("IVA");
-        funcoes.setIdpais(idpais);
+        funcoes.setIdFinanca(idFinanca0);
         funcoes.setValor(9.99);
         dbTabelaFuncoes.insert(DbTabelaFuncoes.getContentValues(funcoes));
 
         funcoes=new Funcoes();
         funcoes.setNome("IMI");
-        funcoes.setIdpais(idpaisE);
+        funcoes.setIdFinanca(idFinanca1);
         funcoes.setValor(10);
         dbTabelaFuncoes.insert(DbTabelaFuncoes.getContentValues(funcoes));
 
         funcoes=new Funcoes();
         funcoes.setNome("Propinas");
-        funcoes.setIdpais(idpaisF);
+        funcoes.setIdFinanca(idFinanca2);
         funcoes.setValor(20);
         dbTabelaFuncoes.insert(DbTabelaFuncoes.getContentValues(funcoes));
     }

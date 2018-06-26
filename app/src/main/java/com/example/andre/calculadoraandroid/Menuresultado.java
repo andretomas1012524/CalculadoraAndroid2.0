@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class Menuresultado extends AppCompatActivity {
 
@@ -14,7 +15,6 @@ public class Menuresultado extends AppCompatActivity {
         setContentView(R.layout.activity_menuresultado);
 
         Intent intent = getIntent();
-
         double num1 = intent.getDoubleExtra(calculobasico.Numerobasico1,0.00);
         double num2 = intent.getDoubleExtra(calculobasico.Numerobasico2,0.00);
 

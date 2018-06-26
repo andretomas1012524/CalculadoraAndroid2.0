@@ -59,7 +59,7 @@ public class EconomiaCursorAdapter extends RecyclerView.Adapter<EconomiaCursorAd
      */
     @Override
     public EconomiaViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View item = LayoutInflater.from(context).inflate(R.layout.precos,parent,false);
+        View item = LayoutInflater.from(context).inflate(R.layout.activity_precos,parent,false);
 
         return new EconomiaViewHolder(item);
 

@@ -71,7 +71,7 @@ public class EditEconomia extends AppCompatActivity implements LoaderManager.Loa
     public void save(View view) {
         funcoes.setNome(editTextTitle.getText().toString());
         funcoes.setValor(Double.parseDouble(editTextPrice.getText().toString()));
-        funcoes.setIdpais((int) spinnerPais.getSelectedItemId());
+        funcoes.setIdFinanca((int) spinnerPais.getSelectedItemId());
         int recordsAffected = getContentResolver().update(
                 Uri.withAppendedPath(FuncoesContentProvider.Pais_URI, Integer.toString(funcoes.getId())),
                 DbTabelaFuncoes.getContentValues(funcoes),
@@ -91,7 +91,7 @@ public class EditEconomia extends AppCompatActivity implements LoaderManager.Loa
     @Override
     public Loader<Cursor> onCreateLoader(int id, @Nullable Bundle args) {
         if (id == Pais_CURSOR_LOADER_ID) {
-            return new CursorLoader(this, FuncoesContentProvider.Pais_URI, DbTabelaPais.All_colunas, null, null, null);
+            return new CursorLoader(this, FuncoesContentProvider.Pais_URI, DbTabelaFinancas.All_colunas, null, null, null);
         }
         return null;
     }
@@ -101,14 +101,14 @@ public class EditEconomia extends AppCompatActivity implements LoaderManager.Loa
                 this,
                 android.R.layout.simple_list_item_1,
                 data,
-                new String[]{DbTabelaPais.Pais},
+                new String[]{DbTabelaFinancas.Pais},
                 new int[]{android.R.id.text1}
                 );
         spinnerPais.setAdapter(cursorAdapterCategories);
-        int idCategory = funcoes.getIdpais();
+        int idCategory = funcoes.getIdFinanca();
         for (int i = 0; i < spinnerPais.getCount(); i++) {
             Cursor cursor = (Cursor) spinnerPais.getItemAtPosition(i);
-            final int posId = cursor.getColumnIndex(DbTabelaPais._ID);
+            final int posId = cursor.getColumnIndex(DbTabelaFinancas._ID);
             if (idCategory == cursor.getInt(posId)) {
                 spinnerPais.setSelection(i);
                 break;

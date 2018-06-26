@@ -28,7 +28,7 @@ public class DbTabelaFuncoes implements BaseColumns {
                         Nome + " TEXT NOT NULL, " +
                         Valor + " Real NOT NULL," +
                         ID_Pais +" Integer ," +
-                        "FOREIGN KEY ("+ID_Pais +") references " + DbTabelaPais.Pais + "(" + DbTabelaPais._ID + ")"+
+                        "FOREIGN KEY ("+ID_Pais +") references " + DbTabelaFinancas.Pais + "(" + DbTabelaFinancas._ID + ")"+
                         ")"
         );
     }
@@ -37,7 +37,7 @@ public class DbTabelaFuncoes implements BaseColumns {
 
         values.put(Nome,funcoes.getNome());
         values.put(Valor,funcoes.getValor());
-        values.put(ID_Pais,funcoes.getIdpais());
+        values.put(ID_Pais,funcoes.getIdFinanca());
 
         return values;
     }
@@ -51,7 +51,7 @@ public class DbTabelaFuncoes implements BaseColumns {
         funcoes.setId(cursor.getInt(posId));
         funcoes.setNome(cursor.getString(posnome));
         funcoes.setValor(cursor.getDouble(posvalor));
-        funcoes.setIdpais(cursor.getInt(posIDpais));
+        funcoes.setIdFinanca(cursor.getInt(posIDpais));
         return funcoes;
     }
 

@@ -6,7 +6,6 @@ import android.content.Loader;
 import android.database.Cursor;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.v4.content.CursorLoader;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -38,7 +37,7 @@ public class Ativityrecicler extends AppCompatActivity implements LoaderManager.
                  editEconomia();
              }
         });
-        getSupportLoaderManager().restartLoader(CursorLoaderID, null, (android.support.v4.app.LoaderManager.LoaderCallbacks<Object>) this);
+        //getSupportLoaderManager().restartLoader(CursorLoaderID, null, (android.support.v4.app.LoaderManager.LoaderCallbacks<Object>) this);
     }
 
     private void editEconomia() {
@@ -50,7 +49,7 @@ public class Ativityrecicler extends AppCompatActivity implements LoaderManager.
     @Override
     protected void onResume() {
         super.onResume();
-        getSupportLoaderManager().restartLoader(CursorLoaderID, null, (android.support.v4.app.LoaderManager.LoaderCallbacks<Object>) this);
+        //getSupportLoaderManager().restartLoader(CursorLoaderID, null, (android.support.v4.app.LoaderManager.LoaderCallbacks<Object>) this);
     }
 
 
@@ -58,7 +57,7 @@ public class Ativityrecicler extends AppCompatActivity implements LoaderManager.
     @Override
     public Loader<Cursor> onCreateLoader(int id, @Nullable Bundle args) {
         if (id == CursorLoaderID) {
-            return new android.content.CursorLoader(this, FuncoesContentProvider.Pais_URI, DbTabelaPais.All_colunas, null, null, null);
+            return new android.content.CursorLoader(this, FuncoesContentProvider.Pais_URI, DbTabelaFinancas.All_colunas, null, null, null);
         }
         return null;
     }

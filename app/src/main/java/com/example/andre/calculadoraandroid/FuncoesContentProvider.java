@@ -24,7 +24,7 @@ public class FuncoesContentProvider extends ContentProvider {
     public static final int Pais_ID = 201;
     public static final String MultiplosItens = "vnd.android.cursor.dir";
     public static final String ItemSimples = "vnd.android.cursor.item";
-    public static final Uri Pais_URI = Uri.withAppendedPath(Base_uri, DbTabelaPais.Pais);
+    public static final Uri Pais_URI = Uri.withAppendedPath(Base_uri, DbTabelaFinancas.Pais);
     DbEconomicaOpenHelper dbEconomicaOpenHelper;
 
     private static UriMatcher getEconomiaUnimatcher() {
@@ -59,9 +59,9 @@ public class FuncoesContentProvider extends ContentProvider {
             case Funcoes_ID:
                 return new DbTabelaFuncoes(bd).quarry(strings, DbTabelaFuncoes._ID + "=?", new String[] { id }, null, null, null);
             case Pais_Uri:
-                return new DbTabelaPais(bd).quarry(strings, s, strings1, null, null, s1);
+                return new DbTabelaFinancas(bd).quarry(strings, s, strings1, null, null, s1);
             case Pais_ID:
-                return new DbTabelaPais(bd).quarry(strings, DbTabelaPais._ID + "=?", new String[] { id }, null, null, null);
+                return new DbTabelaFinancas(bd).quarry(strings, DbTabelaFinancas._ID + "=?", new String[] { id }, null, null, null);
             default:
                 throw new UnsupportedOperationException("Uri inválido !! :" + uri);
         }
@@ -78,11 +78,11 @@ public class FuncoesContentProvider extends ContentProvider {
             case Uri_Funcoes:
                 return MultiplosItens + "/" + Autoridade + "/" + DbTabelaFuncoes.Funcoes;
             case Pais_Uri:
-                return MultiplosItens + "/" + Autoridade + "/" + DbTabelaPais.Pais;
+                return MultiplosItens + "/" + Autoridade + "/" + DbTabelaFinancas.Pais;
             case Funcoes_ID:
                 return ItemSimples + "/" + Autoridade + "/" + DbTabelaFuncoes.Funcoes;
             case Pais_ID:
-                return ItemSimples + "/" + Autoridade + "/" + DbTabelaPais.Pais;
+                return ItemSimples + "/" + Autoridade + "/" + DbTabelaFinancas.Pais;
             default:
                 throw new UnsupportedOperationException("Uri inválido !! :" + uri);
         }
@@ -103,7 +103,7 @@ public class FuncoesContentProvider extends ContentProvider {
                 id = new DbTabelaFuncoes(bd).insert(contentValues);
                 break;
             case Pais_Uri:
-                id = new DbTabelaPais(bd).insert(contentValues);
+                id = new DbTabelaFinancas(bd).insert(contentValues);
                 break;
             default:
                 throw new UnsupportedOperationException("Uri inválido !! :" + uri);
@@ -136,7 +136,7 @@ public class FuncoesContentProvider extends ContentProvider {
                 rows = new DbTabelaFuncoes(bd).delete(DbTabelaFuncoes._ID + "=?", new String[]{id});
                 break;
             case Pais_ID:
-                rows = new DbTabelaPais(bd).delete(DbTabelaPais._ID + "=?", new String[]{id});
+                rows = new DbTabelaFinancas(bd).delete(DbTabelaFinancas._ID + "=?", new String[]{id});
                 break;
             default:
                 throw new UnsupportedOperationException("Uri inválido !! :" + uri);
@@ -162,7 +162,7 @@ public class FuncoesContentProvider extends ContentProvider {
                 rows = new DbTabelaFuncoes(bd).update(contentValues, DbTabelaFuncoes._ID + "=?", new String[]{id});
                 break;
             case Pais_ID:
-                rows = new DbTabelaPais(bd).update(contentValues, DbTabelaPais._ID + "=?", new String[]{id});
+                rows = new DbTabelaFinancas(bd).update(contentValues, DbTabelaFinancas._ID + "=?", new String[]{id});
                 break;
             default:
                 throw new UnsupportedOperationException("Uri inválido !! :" + uri);

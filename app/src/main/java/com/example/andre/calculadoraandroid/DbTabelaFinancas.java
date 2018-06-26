@@ -9,13 +9,13 @@ import android.provider.BaseColumns;
  * Created by Andre on 31-05-2018.
  */
 
-public class DbTabelaPais implements BaseColumns {
+public class DbTabelaFinancas implements BaseColumns {
     private SQLiteDatabase db;
     public static final String Pais = "pais";
     public static final String Nome = "name";
 
     public static final String[] All_colunas= new String[]{_ID,Nome};
-    public DbTabelaPais(SQLiteDatabase db) {
+    public DbTabelaFinancas(SQLiteDatabase db) {
         this.db=db;
     }
     public void create(){
@@ -27,20 +27,20 @@ public class DbTabelaPais implements BaseColumns {
         );
     }
 
-    public static ContentValues getContentValues(Pais nome){
+    public static ContentValues getContentValues(Financas nome){
         ContentValues values = new ContentValues();
 
         values.put(Nome,nome.getNome());
         return values;
     }
 
-    public static Pais getCurrentpais(Cursor cursor){
+    public static Financas getCurrentpais(Cursor cursor){
         final int posnome = cursor.getColumnIndex(Nome);
         final int posId=cursor.getColumnIndex(_ID);
-        Pais pais = new Pais();
-        pais.setId(cursor.getInt(posId));
-        pais.setNome(cursor.getString(posnome));
-        return pais;
+        Financas Financas = new Financas();
+        Financas.setId(cursor.getInt(posId));
+        Financas.setNome(cursor.getString(posnome));
+        return Financas;
     }
 
 
