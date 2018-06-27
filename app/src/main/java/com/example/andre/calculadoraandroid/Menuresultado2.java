@@ -27,11 +27,10 @@ public class Menuresultado2 extends AppCompatActivity {
         TextView textViewres = (TextView)findViewById(R.id.textRes3);
         double res = Funcoesbasicas.subtracao();
         if (res>999999999.99 || res<-999999999.99){
-            Toast.makeText(this, "Resultado Inválido para numeros maiores que dez digitos interiros use as funcoes cientificas", Toast.LENGTH_LONG).show();
+            textViewres.setText("Não foi possivel calcular, o resultado tem mais de dez digitos inteiros");
+        }else {
+            textViewres.setText(String.format("%.2f", res));
         }
-
-
-        textViewres.setText(String.format("%.2f",Funcoesbasicas.subtracao()));
     }
     public void agredecimento(View view) {
         Intent intent = new Intent(this, MenuAgredicento.class);
