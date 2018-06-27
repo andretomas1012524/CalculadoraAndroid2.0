@@ -51,7 +51,8 @@
         <activity android:name=".EditEconomia" />
         <activity android:name=".Menuresultado2" />
         <activity android:name=".MenuResultado3" />
-        <activity android:name=".Menuresultado4"></activity>
+        <activity android:name=".Menuresultado4" />
+        <activity android:name=".Menuresultado5"></activity>
     </application>
 
 </manifest>
