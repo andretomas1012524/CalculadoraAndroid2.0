@@ -53,7 +53,8 @@
         <activity android:name=".MenuResultado3" />
         <activity android:name=".Menuresultado4" />
         <activity android:name=".Menuresultado5" />
-        <activity android:name=".Menuresultado6"></activity>
+        <activity android:name=".Menuresultado6" />
+        <activity android:name=".Menuresultado7"></activity>
     </application>
 
 </manifest>
