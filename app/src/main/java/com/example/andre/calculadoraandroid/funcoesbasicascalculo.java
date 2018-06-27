@@ -94,95 +94,53 @@ public class funcoesbasicascalculo {
 
     }
 
-    public double DivisaoInteira(){
+    public double Divisao(){
         if(b==0){
             return 0;
+        }else{
+            return a / b;
         }
-        resultado = a / b;
-        if (resultado > 999999999){
-            return 0;
-        }else if (resultado<-999999999){
-            return 0;
-        }else {
-            return resultado;
-        }
+
     }
 
-    public double Divisao(){
+    public double DivisaoInteira(){
         if(b==0) {
             return 0;
+        }else{
+            return a % b;
         }
-        resultado = a % b;
-        if (resultado > 999999999.99){
-            return 0;
-        }else if (resultado<-999999999.99){
-            return 0;
-        }else {
-            return resultado;
-        }
+
     }
     //media inteira (a+b)/2
     public double mediaInteira(){
-        resultado = (a+b)/2;
-        if (resultado > 999999999){
-            return 0;
-        }else if (resultado<-999999999){
-            return 0;
-        }else {
-            return resultado;
-        }
+        return (a+b)/2;
     }
     // media (a+b)%2
     public double media(){
-        resultado = (a+b) % 2;
-        if (resultado > 999999999.99){
-            return 0;
-        }else if (resultado<-999999999.99){
-            return 0;
-        }else {
-            return resultado;
-        }
+        return  (a+b) % 2;
+
     }
     // potencia (x^potn)
     public double potencia(){
-        resultado = Math.pow(a,b);
-        if (resultado > 999999999){
-            return 0;
-        }else if (resultado<-999999999){
-            return 0;
-        }else {
-            return resultado;
-        }
+        return Math.pow(a,b);
     }
     // raiz (x^(1%raiz))
-    public double raiz(double a,int raiz){
-        resultado = Math.pow(a,1%raiz);
-        if (resultado > 999999999.99){
-            return 0;
-        }else if (resultado<-999999999.99){
-            return 0;
-        }else {
-            return resultado;
+    public double raiz(){
+        return Math.pow(a,1%b);
+    }
+    // Tirei inspirição deste link : 'http://www.guj.com.br/t/resolvido-calcular-fatorial-de-um-numero/70738'
+     public double fatorial(){
+        double i = a - 1;
+        while (i>0){
+            a = a * i;
+            i--;
         }
+        return a;
     }
 
-    /* public int fatorial(int a, int i){
-        for (i=0;i<=a;i++){
-            resultadoI = a * a-i;
-        }
-        return resultadoI;
-    }*/
-
     // raiz com numero elevado a n (x^(n%raiz))
-    public double raizpred(double a,int raiz,int n){
-        resultado = Math.pow(a,n%raiz);
-        if (resultado > 999999999.99){
-            return 0;
-        }else if (resultado<-999999999.99){
-            return 0;
-        }else {
-            return resultado;
-        }
+    public double raizpred(int n){
+        return Math.pow(a,n%b);
     }
 
 }
