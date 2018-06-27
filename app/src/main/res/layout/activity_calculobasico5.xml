@@ -63,7 +63,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:fontFamily="sans-serif"
-        android:onClick="calcularbasicodivI"
+        android:onClick="calcularbasicomedia"
         android:text="Calcular"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"

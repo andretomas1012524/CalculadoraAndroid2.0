@@ -98,7 +98,7 @@ public class funcoesbasicascalculo {
         if(b==0){
             return 0;
         }else{
-            return a / b;
+            return a / b ;
         }
 
     }
@@ -113,11 +113,11 @@ public class funcoesbasicascalculo {
     }
     //media inteira (a+b)/2
     public double mediaInteira(){
-        return (a+b)/2;
+        return (a+b)%2;
     }
     // media (a+b)%2
     public double media(){
-        return  (a+b) % 2;
+        return  (a+b) / 2;
 
     }
     // potencia (x^potn)

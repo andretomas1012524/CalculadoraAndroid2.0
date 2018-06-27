@@ -20,7 +20,7 @@ public class calculobasico4 extends AppCompatActivity {
     }
 
     public void calcularbasicodivI(View view) {
-        Intent intent = new Intent(this,Menuresultado4.class);
+        Intent intent = new Intent(this,Menuresultado5.class);
 
         EditText editTextnum1 = (EditText)findViewById(R.id.nbasico);
         EditText editTextnum2 = (EditText)findViewById(R.id.nbasico3);
