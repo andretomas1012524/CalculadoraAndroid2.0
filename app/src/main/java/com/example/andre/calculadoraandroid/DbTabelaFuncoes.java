@@ -28,7 +28,7 @@ public class DbTabelaFuncoes implements BaseColumns {
                         Nome + " TEXT NOT NULL, " +
                         Valor + " Real NOT NULL," +
                         ID_Pais +" Integer ," +
-                        "FOREIGN KEY ("+ID_Pais +") references " + DbTabelaFinancas.Pais + "(" + DbTabelaFinancas._ID + ")"+
+                        "FOREIGN KEY ("+ID_Pais +") references " + DbTabelaFinancas.Financa + "(" + DbTabelaFinancas._ID + ")"+
                         ")"
         );
     }

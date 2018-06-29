@@ -14,7 +14,8 @@
         android:layout_marginTop="8dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="Material" />
+        tools:text="Material"
+        android:layout_marginLeft="8dp" />
 
     <TextView
         android:id="@+id/textViewPreco"
@@ -24,5 +25,6 @@
         android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="preco" />
+        tools:text="preco"
+        android:layout_marginRight="8dp" />
 </android.support.constraint.ConstraintLayout>

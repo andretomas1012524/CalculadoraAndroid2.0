@@ -14,7 +14,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:fontFamily="sans-serif"
-        android:text="Outras funções para cálculo básico ou cientifico:"
+        android:text="Outras funções para cálculo básico:"
         android:textAppearance="@style/TextAppearance.AppCompat"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"

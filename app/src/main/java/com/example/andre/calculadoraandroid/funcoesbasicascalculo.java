@@ -126,7 +126,7 @@ public class funcoesbasicascalculo {
     }
     // raiz (x^(1%raiz))
     public double raiz(){
-        return Math.pow(a,1%b);
+        return Math.pow(a,(1/b));
     }
     // Tirei inspirição deste link : 'http://www.guj.com.br/t/resolvido-calcular-fatorial-de-um-numero/70738'
      public double fatorial(){
@@ -139,8 +139,9 @@ public class funcoesbasicascalculo {
     }
 
     // raiz com numero elevado a n (x^(n%raiz))
-    public double raizpred(int n){
-        return Math.pow(a,n%b);
+    public double raizpred(double n){
+        b=n/b;
+        return Math.pow(a,b);
     }
 
 }

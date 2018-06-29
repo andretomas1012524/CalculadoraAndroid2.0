@@ -20,7 +20,7 @@ public class EditEconomia extends AppCompatActivity implements LoaderManager.Loa
     private static final int Pais_CURSOR_LOADER_ID = 0;
     private EditText editTextTitle;
     private EditText editTextPrice;
-    private Spinner spinnerPais;
+    private Spinner spinnerFuncao;
     private Funcoes funcoes;
 
 
@@ -37,7 +37,7 @@ public class EditEconomia extends AppCompatActivity implements LoaderManager.Loa
         }
 
         Cursor cursorfuncao = getContentResolver().query(
-                Uri.withAppendedPath(FuncoesContentProvider.Pais_URI, Integer.toString(funcaoId)),
+                Uri.withAppendedPath(FuncoesContentProvider.FINANCA_URI, Integer.toString(funcaoId)),
                 DbTabelaFuncoes.All_colunas,
                 null,
                 null,
@@ -51,7 +51,7 @@ public class EditEconomia extends AppCompatActivity implements LoaderManager.Loa
 
         editTextTitle = (EditText) findViewById(R.id.editTexttitle);
         editTextPrice = (EditText) findViewById(R.id.editTextpreco);
-        spinnerPais = (Spinner) findViewById(R.id.spinnerpreco);
+        spinnerFuncao = (Spinner) findViewById(R.id.spinnerfuncao);
 
         funcoes = DbTabelaFuncoes.getCurrentFuncoes(cursorfuncao);
         editTextTitle.setText(funcoes.getNome());
@@ -71,9 +71,9 @@ public class EditEconomia extends AppCompatActivity implements LoaderManager.Loa
     public void save(View view) {
         funcoes.setNome(editTextTitle.getText().toString());
         funcoes.setValor(Double.parseDouble(editTextPrice.getText().toString()));
-        funcoes.setIdFinanca((int) spinnerPais.getSelectedItemId());
+        funcoes.setIdFinanca((int) spinnerFuncao.getSelectedItemId());
         int recordsAffected = getContentResolver().update(
-                Uri.withAppendedPath(FuncoesContentProvider.Pais_URI, Integer.toString(funcoes.getId())),
+                Uri.withAppendedPath(FuncoesContentProvider.FINANCA_URI, Integer.toString(funcoes.getId())),
                 DbTabelaFuncoes.getContentValues(funcoes),
                 null,
                 null
@@ -91,7 +91,7 @@ public class EditEconomia extends AppCompatActivity implements LoaderManager.Loa
     @Override
     public Loader<Cursor> onCreateLoader(int id, @Nullable Bundle args) {
         if (id == Pais_CURSOR_LOADER_ID) {
-            return new CursorLoader(this, FuncoesContentProvider.Pais_URI, DbTabelaFinancas.All_colunas, null, null, null);
+            return new CursorLoader(this, FuncoesContentProvider.FINANCA_URI, DbTabelaFinancas.All_colunas, null, null, null);
         }
         return null;
     }
@@ -101,16 +101,16 @@ public class EditEconomia extends AppCompatActivity implements LoaderManager.Loa
                 this,
                 android.R.layout.simple_list_item_1,
                 data,
-                new String[]{DbTabelaFinancas.Pais},
+                new String[]{DbTabelaFinancas.Financa},
                 new int[]{android.R.id.text1}
                 );
-        spinnerPais.setAdapter(cursorAdapterCategories);
+        spinnerFuncao.setAdapter(cursorAdapterCategories);
         int idCategory = funcoes.getIdFinanca();
-        for (int i = 0; i < spinnerPais.getCount(); i++) {
-            Cursor cursor = (Cursor) spinnerPais.getItemAtPosition(i);
+        for (int i = 0; i < spinnerFuncao.getCount(); i++) {
+            Cursor cursor = (Cursor) spinnerFuncao.getItemAtPosition(i);
             final int posId = cursor.getColumnIndex(DbTabelaFinancas._ID);
             if (idCategory == cursor.getInt(posId)) {
-                spinnerPais.setSelection(i);
+                spinnerFuncao.setSelection(i);
                 break;
             }
         }

@@ -11,7 +11,7 @@ import android.provider.BaseColumns;
 
 public class DbTabelaFinancas implements BaseColumns {
     private SQLiteDatabase db;
-    public static final String Pais = "pais";
+    public static final String Financa = "financa";
     public static final String Nome = "name";
 
     public static final String[] All_colunas= new String[]{_ID,Nome};
@@ -20,7 +20,7 @@ public class DbTabelaFinancas implements BaseColumns {
     }
     public void create(){
         db.execSQL(
-                "CREATE TABLE " + Pais + "(" +
+                "CREATE TABLE " + Financa + "(" +
                         _ID +" INTEGER PRIMARY KEY AUTOINCREMENT," +
                         Nome + " TEXT NOT NULL " +
                         ")"
@@ -45,18 +45,18 @@ public class DbTabelaFinancas implements BaseColumns {
 
 
     public long insert(ContentValues values){
-        return db.insert(Pais,null, values);
+        return db.insert(Financa,null, values);
     }
 
     public int update(ContentValues values,String whereClause, String[] whereArgs){
-        return db.update(Pais,values,whereClause,whereArgs);
+        return db.update(Financa,values,whereClause,whereArgs);
     }
 
     public int delete(String whereClause,String[] whereArgs){
-        return db.delete(Pais,whereClause,whereArgs);
+        return db.delete(Financa,whereClause,whereArgs);
     }
 
     public Cursor quarry(String[] colunas,String seletion, String[] seletionargs,String groupBy, String having,String orderby){
-        return db.query(Pais,colunas,seletion,seletionargs,groupBy,having,orderby);
+        return db.query(Financa,colunas,seletion,seletionargs,groupBy,having,orderby);
     }
 }

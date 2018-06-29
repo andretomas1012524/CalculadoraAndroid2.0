@@ -32,4 +32,9 @@ public class maisfuncoesbasica extends AppCompatActivity {
         Intent intent = new Intent(this,calculobasico9.class);
         startActivity(intent);
     }
+
+    public void voltbasc(View view) {
+        Intent intent = new Intent(this,funcoesbasicas.class);
+        startActivity(intent);
+    }
 }

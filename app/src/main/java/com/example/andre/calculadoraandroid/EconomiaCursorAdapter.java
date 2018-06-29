@@ -116,8 +116,8 @@ public class EconomiaCursorAdapter extends RecyclerView.Adapter<EconomiaCursorAd
         public EconomiaViewHolder(View itemView) {
             super(itemView);
 
-            textViewNome=(TextView)itemView.findViewById(R.id.textViewNome);
-            textViewpreco=(TextView)itemView.findViewById(R.id.textViewPreco);
+            textViewNome = (TextView)itemView.findViewById(R.id.textViewNome);
+            textViewpreco = (TextView)itemView.findViewById(R.id.textViewPreco);
 
             itemView.setOnClickListener(this);
         }
