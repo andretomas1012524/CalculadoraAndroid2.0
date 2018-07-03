@@ -130,12 +130,12 @@ public class funcoesbasicascalculo {
     }
     // Tirei inspirição deste link : 'http://www.guj.com.br/t/resolvido-calcular-fatorial-de-um-numero/70738'
      public double fatorial(){
-        double i = a - 1;
-        while (i>0){
-            a = a * i;
-            i--;
+        double fa = 1;
+        int i;
+        for (i = 1; i <=a ; i++) {
+            fa = i * fa;
         }
-        return a;
+        return fa;
     }
 
     // raiz com numero elevado a n (x^(n%raiz))
