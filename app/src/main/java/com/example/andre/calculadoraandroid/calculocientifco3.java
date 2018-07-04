@@ -18,7 +18,7 @@ public class calculocientifco3 extends AppCompatActivity {
     }
 
     public void multccient(View view) {
-        Intent intent = new Intent(this,Menuresultado12.class);
+        Intent intent = new Intent(this,Menuresultado13.class);
 
         EditText editTextnum1 = (EditText)findViewById(R.id.ncient4);
         EditText editTextnum2 = (EditText)findViewById(R.id.ncient5);

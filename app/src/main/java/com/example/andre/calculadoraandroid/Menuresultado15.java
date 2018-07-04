@@ -6,16 +6,16 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-public class Menuresultado13 extends AppCompatActivity {
+public class Menuresultado15 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_menuresultado13);
+        setContentView(R.layout.activity_menuresultado15);
         Intent intent = getIntent();
 
-        long num1 = (long) intent.getDoubleExtra(calculocientifco3.Numerocient1,0.00);
-        long num2 = (long) intent.getDoubleExtra(calculocientifco3.Numerocient2,0.00);
+        long num1 = (long) intent.getDoubleExtra(calculocientifico5.Numerocient1,0.00);
+        long num2 = (long) intent.getDoubleExtra(calculocientifico5.Numerocient2,0.00);
 
 
         if(num1 == 0.00 || num2 == 0.00){
@@ -24,16 +24,17 @@ public class Menuresultado13 extends AppCompatActivity {
         }
         funcoescientificascalculo funcoescientificascalculo = new funcoescientificascalculo(num1,num2);
 
-        TextView textViewres = (TextView)findViewById(R.id.textRes13);
-        TextView textViewcient = (TextView)findViewById(R.id.textpartecientifica3);
-        double res = funcoescientificascalculo.multiplicacao();
+        TextView textViewres = (TextView)findViewById(R.id.textRes15);
+        TextView textViewcient = (TextView)findViewById(R.id.textpartecientifica5);
+        double res = funcoescientificascalculo.divisaointeira();
         int index = (int) funcoescientificascalculo.contardigitos();
         if (res<999999999.99 && res>-999999999.99){
             textViewres.setText("Não foi possivel calcular, o resultado tem menos de dez digitos inteiros");
+            textViewcient.setText("parte cientifica: desconhecida");
         }else {
             textViewres.setText(String.format("parte normal:%.2f", res));
+            textViewcient.setText(String.format("parte cientifica: parte normal(n,dd) * 10 ^ %d",index));
         }
-        textViewcient.setText(String.format("parte cientifica: parte normal(n,dd) * 10 ^ %d",index));
 
     }
 

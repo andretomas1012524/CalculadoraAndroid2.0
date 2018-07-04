@@ -4,67 +4,56 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.andre.calculadoraandroid.calculobasico9">
+    tools:context="com.example.andre.calculadoraandroid.Menuresultado15">
 
-    <EditText
-        android:id="@+id/nbasico16"
+    <TextView
+        android:id="@+id/textRes15"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:ems="10"
-        android:fontFamily="sans-serif"
-        android:inputType="number|numberSigned|numberDecimal"
-        android:textSize="24sp"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView36"
-        tools:text="numero1" />
+        app:layout_constraintTop_toBottomOf="@+id/textView60"
+        tools:text="Resultado Obtido" />
 
     <TextView
-        android:id="@+id/textView35"
+        android:id="@+id/textView60"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="8dp"
+        android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:fontFamily="sans-serif"
-        android:text="Obs: Só são aceites números até duas casa decimais e/ou nove numeros inteiros"
+        android:text="O seu resultado:"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/cbuttonbasico9"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nbasico16" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/cbuttonbasico9"
+        android:id="@+id/buttonavançar14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:fontFamily="sans-serif"
-        android:onClick="calcularbasicofact"
-        android:text="Calcular"
-        android:textSize="18sp"
+        android:onClick="agredecimento"
+        android:text="Avancar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
-        android:id="@+id/textView36"
+        android:id="@+id/textpartecientifica5"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:fontFamily="sans-serif"
-        android:text="Cálculo básico (Factorial):"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textSize="30sp"
+        android:text="TextView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/textRes15" />
 </android.support.constraint.ConstraintLayout>
