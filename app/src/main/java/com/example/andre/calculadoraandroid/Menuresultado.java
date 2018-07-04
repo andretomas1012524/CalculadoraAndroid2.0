@@ -37,7 +37,7 @@ public class Menuresultado extends AppCompatActivity {
 
 
     public void menuprincipal(View view) {
-        Intent intent = new Intent(this,MainActivity.class);
+        Intent intent = new Intent(this,MenuAgredicento.class);
         startActivity(intent);
     }
 }

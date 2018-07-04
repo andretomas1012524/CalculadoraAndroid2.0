@@ -15,6 +15,8 @@ public class contaspessoais extends AppCompatActivity {
     }
 
     public void Combustivel(View view) {
+        Intent intent = new Intent(this,Ativityrecicler.class);
+        startActivity(intent);
     }
 
     public void gastosbens(View view) {
