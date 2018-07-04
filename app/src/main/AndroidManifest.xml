@@ -67,7 +67,12 @@
         <activity android:name=".Menuresultado13" />
         <activity android:name=".Menuresultado14" />
         <activity android:name=".Menuresultado15" />
-        <activity android:name=".Menuconversao"></activity>
+        <activity android:name=".Menuconversao" />
+        <activity android:name=".Menubin" />
+        <activity android:name=".Menubin2" />
+        <activity android:name=".Menubin3" />
+        <activity android:name=".Menuresbin" />
+        <activity android:name=".Menuresbin2"></activity>
     </application>
 
 </manifest>

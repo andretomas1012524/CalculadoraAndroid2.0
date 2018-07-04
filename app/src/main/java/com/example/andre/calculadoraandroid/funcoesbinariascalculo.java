@@ -9,50 +9,50 @@ public class funcoesbinariascalculo {
     private int b;
     private int n;
     String conv;
-    int convA;
-    int convB;
-    int resultado;
+    String convA;
+    String convB;
+    String resultado;
 
     public funcoesbinariascalculo(int a, int b){
         this.a = a;
         this.b = b;
     }
-    public String conversaobinario(int n){
-        conv = Integer.toString(n,2);
+    public String conversaobinario(String n){
+        conv = Integer.toString(Integer.parseInt(n),2);
         return conv;
     }
-    private int conversaoA(){
-        convA = Integer.parseInt(Integer.toBinaryString(a));
+    /*private String conversaoA(){
+        //convA = Integer.toString(a,2);
         return convA;
     }
-    private int conversaoB(){
-        convB = Integer.parseInt(Integer.toBinaryString(b));
+    private String conversaoB(){
+        //convB = Integer.toString(b,2);
         return convB;
-    }
+    }*/
 
-    public int calculoBCDsoma(){
-       resultado = convA + convB;
-       resultado = Integer.parseInt(Integer.toBinaryString(resultado));
-       return resultado;
+    public String calculoBCDsoma(){
+        resultado = String.valueOf(a + b);
+        String c = Integer.toString(Integer.parseInt(resultado),2);
+        return c;
     }
-    public int calculoBCDsub(){
-        resultado = convA - convB;
-        resultado = Integer.parseInt(Integer.toBinaryString(resultado));
+   public String calculoBCDsub(){
+       resultado = String.valueOf(a - b);
+       String c = Integer.toString(Integer.parseInt(resultado),2);
+       return c;
+   }
+    public String calculoBCDmult(){
+        resultado = String.valueOf(a * b);
+        String c = Integer.toString(Integer.parseInt(resultado),2);
+        return c;
+    }
+   public String calculoBCDdiv(){
+       resultado = String.valueOf(a / b);
+       String c = Integer.toString(Integer.parseInt(resultado),2);
+       return c;
+    }
+    /*public String calculoBCDdivi(){
+        resultado = String.valueOf(convA % convB);
+        resultado = conversaobinario(Integer.parseInt(resultado));
         return resultado;
-    }
-    public int calculoBCDmult(){
-        resultado = convA * convB;
-        resultado = Integer.parseInt(Integer.toBinaryString(resultado));
-        return resultado;
-    }
-    public int calculoBCDdiv(){
-        resultado = convA / convB;
-        resultado = Integer.parseInt(Integer.toBinaryString(resultado));
-        return resultado;
-    }
-    public int calculoBCDdivi(){
-        resultado = convA % convB;
-        resultado = Integer.parseInt(Integer.toBinaryString(resultado));
-        return resultado;
-    }
+    }*/
 }

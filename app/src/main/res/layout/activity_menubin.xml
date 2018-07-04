@@ -4,73 +4,71 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.andre.calculadoraandroid.calculoBCD">
+    tools:context="com.example.andre.calculadoraandroid.Menubin">
 
     <TextView
-        android:id="@+id/textView12"
+        android:id="@+id/textView62"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="Calculo BCD (Adicao)"
+        android:text="Calculo BCD (Subtração)"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editText6"
+        android:id="@+id/editText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:ems="10"
-        android:inputType="number|numberSigned|numberDecimal"
+        android:inputType="number|numberDecimal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView12"
+        app:layout_constraintTop_toBottomOf="@+id/textView62"
         tools:text="1º Numero" />
 
     <EditText
-        android:id="@+id/editText7"
+        android:id="@+id/editText2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:ems="10"
-        android:inputType="number|numberSigned|numberDecimal"
+        android:inputType="number|numberDecimal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText6"
-        tools:text="2º Numero" />
+        app:layout_constraintTop_toBottomOf="@+id/editText"
+        tools:text="2º numero" />
 
     <TextView
-        android:id="@+id/textView13"
-        android:layout_width="0dp"
+        android:id="@+id/textView63"
+        android:layout_width="344dp"
         android:layout_height="0dp"
         android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="Obs: Só são aceites numeros até 9,5 em binario"
         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/button16"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText7" />
+        app:layout_constraintBottom_toTopOf="@+id/button24"
+        app:layout_constraintTop_toBottomOf="@+id/editText2"
+        tools:layout_editor_absoluteX="8dp"
+        tools:ignore="MissingConstraints" />
 
     <Button
-        android:id="@+id/button16"
+        android:id="@+id/button24"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:text="Calcular"
-        android:onClick="calbinsoma"
+        android:onClick="calbinsub"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginRight="8dp" />

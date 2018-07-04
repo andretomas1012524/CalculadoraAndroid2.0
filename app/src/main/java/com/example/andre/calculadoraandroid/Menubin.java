@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class calculoBCD extends AppCompatActivity {
+public class Menubin extends AppCompatActivity {
     public static final double numMax = 9;
     public static final double numMin = -9;
     public static final String Numerobasico1 = "Numero1";
@@ -15,13 +15,13 @@ public class calculoBCD extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_calculo_bcd);
+        setContentView(R.layout.activity_menubin);
     }
 
-    public void calbinsoma(View view) {
-        Intent intent = new Intent(this,Menuresbin.class);
-        EditText editTextnum1 = (EditText)findViewById(R.id.editText6);
-        EditText editTextnum2 = (EditText)findViewById(R.id.editText7);
+    public void calbinsub(View view) {
+        Intent intent = new Intent(this,Menuresbin2.class);
+        EditText editTextnum1 = (EditText)findViewById(R.id.editText);
+        EditText editTextnum2 = (EditText)findViewById(R.id.editText2);
         double num1;
         double num2;
         try {
