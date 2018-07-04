@@ -19,7 +19,7 @@ public class funcoescientificascalculo {
         int nres = resultados.length();
         int i;
         int count=0;
-        for (i = 1; i <nres-3 ; i++) {
+        for (i = 0; i <nres-3 ; i++) {
             count++;
         }
         return count;

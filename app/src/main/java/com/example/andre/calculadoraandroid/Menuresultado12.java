@@ -29,7 +29,7 @@ public class Menuresultado12 extends AppCompatActivity {
         double res = funcoescientificascalculo.subtracao();
         int index = (int) funcoescientificascalculo.contardigitos();
         if (res<999999999.99 && res>-999999999.99){
-            textViewres.setText("Não foi possivel calcular, o resultado tem mais de dez digitos inteiros");
+            textViewres.setText("Não foi possivel calcular, o resultado tem menos de dez digitos inteiros");
         }else {
             textViewres.setText(String.format("parte normal:%.2f", res));
         }
