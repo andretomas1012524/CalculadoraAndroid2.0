@@ -4,17 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.andre.calculadoraandroid.funcoesbinariasMenu">
+    tools:context="com.example.andre.calculadoraandroid.Funcoesbinariaspred">
 
     <TextView
-        android:id="@+id/textView14"
+        android:id="@+id/textView72"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:fontFamily="sans-serif"
-        android:text="Funcoes para calculo binario BCD:"
+        android:text="Funcoes para calculo binario com bits"
         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -22,61 +22,62 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button17"
+        android:id="@+id/button32"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:fontFamily="sans-serif"
+        android:onClick="adicaobinpred"
         android:text="Adição"
-        android:onClick="adicao"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView14" />
+        app:layout_constraintTop_toBottomOf="@+id/textView72" />
 
     <Button
-        android:id="@+id/button21"
+        android:id="@+id/button42"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:fontFamily="sans-serif"
+        android:onClick="subtracaobinpred"
         android:text="Subtração"
-        android:onClick="subtracao"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button17" />
+        app:layout_constraintTop_toBottomOf="@+id/button32" />
 
     <Button
-        android:id="@+id/button22"
+        android:id="@+id/button43"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:fontFamily="sans-serif"
+        android:onClick="multiplicacaobinpred"
         android:text="Multiplicacao"
-        android:onClick="multiplicacao"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button21" />
+        app:layout_constraintTop_toBottomOf="@+id/button42" />
 
     <Button
-        android:id="@+id/button23"
+        android:id="@+id/button44"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:fontFamily="sans-serif"
+        android:onClick="divisaobinpred"
         android:text="Divisao"
-        android:onClick="divisao"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button22" />
+        app:layout_constraintTop_toBottomOf="@+id/button43" />
 </android.support.constraint.ConstraintLayout>

@@ -74,7 +74,16 @@
         <activity android:name=".Menuresbin" />
         <activity android:name=".Menuresbin2" />
         <activity android:name=".Menuresbin4" />
-        <activity android:name=".Menuresbin3"></activity>
+        <activity android:name=".Menuresbin3" />
+        <activity android:name=".Funcoesbinariaspred" />
+        <activity android:name=".Menubinpred" />
+        <activity android:name=".Menubinpred2" />
+        <activity android:name=".Menubinpred3" />
+        <activity android:name=".Menubinpred4" />
+        <activity android:name=".Menuresbinpred" />
+        <activity android:name=".Menuresbinpred2" />
+        <activity android:name=".Menuresbinpred3" />
+        <activity android:name=".Menuresbinpred4"></activity>
     </application>
 
 </manifest>

@@ -24,7 +24,7 @@ public class funcoescalculobinario extends AppCompatActivity {
     }
 
     public void BinarioB(View view) {
-        //Intent intent = new Intent(this,funcoesbinariaspred.class);
-        //startActivity(intent);
+        Intent intent = new Intent(this,Funcoesbinariaspred.class);
+        startActivity(intent);
     }
 }
