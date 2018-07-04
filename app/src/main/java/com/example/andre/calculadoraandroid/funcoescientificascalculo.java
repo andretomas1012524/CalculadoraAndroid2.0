@@ -5,18 +5,55 @@ package com.example.andre.calculadoraandroid;
  */
 
 public class funcoescientificascalculo {
-    public double resultado = 0;
-    private long count = 0 ;
+    public double resultado;
+    private long a;
+    private long b;
 
-    //-------- Operações e funções ------- \\
-
-    public double somacientifica(double a,long expa,double b ,long expb){
-        for (expa = 0 ; expa <a;expa++){
-            //contar digitos até aos tres primeiros (1.32 * 10^10)
+    // ------- Declarar variaveis -------- \\
+    public funcoescientificascalculo(long a, long b){
+        this.a = a;
+        this.b = b;
+    }
+    public double contardigitos(){
+        String resultados = String.valueOf(resultado);
+        double nres = resultados.length();
+        int i;
+        double count=0;
+        for (i = 0; i <nres-1 ; i++) {
             count++;
         }
+        return count;
 
-
+    }
+    //-------- Operações e funções ------- \\
+    public double soma(){
+        resultado = a + b;
+        return resultado;
+    }
+    public double subtracao(){
+        if (a<b) {
+            resultado = b-a;
+        }else{
+            resultado = a - b;
+        }
+        return resultado;
+    }
+    public double multiplicacao(){
+        resultado = a * b;
+        return resultado;
+    }
+    public double divisao(){
+        if (b == 0){
+            return 0;
+        }
+        resultado = a /b;
+        return resultado;
+    }
+    public double divisaointeira(){
+        if (b == 0){
+            return 0;
+        }
+        resultado = a % b;
         return resultado;
     }
 }
