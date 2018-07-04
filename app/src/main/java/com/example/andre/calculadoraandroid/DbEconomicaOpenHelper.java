@@ -40,6 +40,7 @@ public class DbEconomicaOpenHelper extends SQLiteOpenHelper {
         Financas=new Financas();
         Financas.setNome("Financa1");
         int idFinanca1 = (int) dbTabelaFinancas.insert(DbTabelaFinancas.getContentValues(Financas));
+
         Financas=new Financas();
         Financas.setNome("Financa2");
         int idFinanca2 = (int) dbTabelaFinancas.insert(DbTabelaFinancas.getContentValues(Financas));

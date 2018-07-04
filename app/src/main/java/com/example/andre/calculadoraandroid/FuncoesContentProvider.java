@@ -55,13 +55,13 @@ public class FuncoesContentProvider extends ContentProvider {
 
         switch (matcher.match(uri)) {
             case Uri_Funcoes:
-                return new DbTabelaFuncoes(bd).quarry(strings, s, strings1, null, null, s1);
+                return new DbTabelaFuncoes(bd).query(strings, s, strings1, null, null, s1);
             case Funcoes_ID:
-                return new DbTabelaFuncoes(bd).quarry(strings, DbTabelaFuncoes._ID + "=?", new String[] { id }, null, null, null);
+                return new DbTabelaFuncoes(bd).query(strings, DbTabelaFuncoes._ID + "=?", new String[] { id }, null, null, null);
             case Financa_uri:
-                return new DbTabelaFinancas(bd).quarry(strings, s, strings1, null, null, s1);
+                return new DbTabelaFinancas(bd).query(strings, s, strings1, null, null, s1);
             case Financa_ID:
-                return new DbTabelaFinancas(bd).quarry(strings, DbTabelaFinancas._ID + "=?", new String[] { id }, null, null, null);
+                return new DbTabelaFinancas(bd).query(strings, DbTabelaFinancas._ID + "=?", new String[] { id }, null, null, null);
             default:
                 throw new UnsupportedOperationException("Uri inválido:" + uri);
         }

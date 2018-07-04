@@ -56,7 +56,7 @@ public class DbTabelaFinancas implements BaseColumns {
         return db.delete(Financa,whereClause,whereArgs);
     }
 
-    public Cursor quarry(String[] colunas,String seletion, String[] seletionargs,String groupBy, String having,String orderby){
+    public Cursor query(String[] colunas, String seletion, String[] seletionargs, String groupBy, String having, String orderby){
         return db.query(Financa,colunas,seletion,seletionargs,groupBy,having,orderby);
     }
 }

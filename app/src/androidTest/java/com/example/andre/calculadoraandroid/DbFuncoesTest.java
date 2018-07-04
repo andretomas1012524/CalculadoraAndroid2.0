@@ -64,7 +64,7 @@ public class DbFuncoesTest {
                 new String[]{Long.toString(id)}
         );
         assertEquals("Falha no delete de Financa", 1, rowsAffected);
-        Cursor cursor = tabelaPais.quarry(DbTabelaFinancas.All_colunas, null, null,
+        Cursor cursor = tabelaPais.query(DbTabelaFinancas.All_colunas, null, null,
                 null, null, null);
         assertEquals("Financa encontra apos delete = ??", 0, cursor.getCount());
 
@@ -73,7 +73,7 @@ public class DbFuncoesTest {
 
     @Nonnull
      private Financas ReadFirstFinanca(DbTabelaFinancas tablepais, String expectedName, long expectedId) {
-            Cursor cursor = tablepais.quarry(DbTabelaFinancas.All_colunas, null, null,
+            Cursor cursor = tablepais.query(DbTabelaFinancas.All_colunas, null, null,
                     null, null, null);
             assertEquals("Falha ao ler Financa", 4, cursor.getCount());
 
@@ -130,7 +130,7 @@ public class DbFuncoesTest {
          );
          assertEquals("Falha ao apagar Funcao", 1, rowsAffected);
 
-         Cursor cursor = tabelaFuncoes.quarry(DbTabelaFuncoes.All_colunas, null, null,
+         Cursor cursor = tabelaFuncoes.query(DbTabelaFuncoes.All_colunas, null, null,
                  null, null, null);
          assertEquals("Funcao encontradas apos delete = ??", 0, cursor.getCount());
 
@@ -140,16 +140,16 @@ public class DbFuncoesTest {
      @Nonnull
      private Funcoes ReadFirstFuncao(DbTabelaFuncoes tablefuncoes,double expectedNum,String expectedNome,
                                      long expectPaisID,long expectedID){
-           Cursor cursor = tablefuncoes.quarry(DbTabelaFuncoes.All_colunas,null,null,
+           Cursor cursor = tablefuncoes.query(DbTabelaFuncoes.All_colunas,null,null,
                    null,null,null);
            assertEquals("Falha ao ler Funcao",4,cursor.getCount());
            assertTrue("Erro ao ler a primeira funcao",cursor.moveToNext());
 
            Funcoes funcoes = DbTabelaFuncoes.getCurrentFuncoes(cursor);
-           assertEquals("Id funcao incorreta",expectedID,funcoes.getId());
-           assertEquals("Nome de funcao Incorreta",expectedNome,funcoes.getNome());
-           assertEquals("Funcao valor incorreta",expectedNum,funcoes.getValor(),0.25);
-            assertEquals("Funcao IDFinanca incorreta",expectPaisID,funcoes.getIdFinanca());
+           assertEquals("Id funcao incorreta",expectedID , funcoes.getId());
+           assertEquals("Nome de funcao Incorreta",expectedNome , funcoes.getNome());
+           assertEquals("Funcao valor incorreta",expectedNum , funcoes.getValor(),0.25);
+            assertEquals("Funcao IDFinanca incorreta",expectPaisID , funcoes.getIdFinanca());
 
             return funcoes;
        }

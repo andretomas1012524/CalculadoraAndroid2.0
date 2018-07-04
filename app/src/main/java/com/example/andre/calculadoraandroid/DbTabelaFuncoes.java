@@ -68,7 +68,7 @@ public class DbTabelaFuncoes implements BaseColumns {
         return db.delete(Funcoes,whereClause,whereArgs);
     }
 
-    public Cursor quarry(String[] colunas,String seletion, String[] seletionargs,String groupBy, String having,String orderby){
+    public Cursor query(String[] colunas, String seletion, String[] seletionargs, String groupBy, String having, String orderby){
         Cursor cursor = db.query(Funcoes,colunas,seletion,seletionargs,groupBy,having,orderby);
         return cursor;
     }
