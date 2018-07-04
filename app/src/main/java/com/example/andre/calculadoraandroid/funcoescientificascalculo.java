@@ -14,12 +14,12 @@ public class funcoescientificascalculo {
         this.a = a;
         this.b = b;
     }
-    public double contardigitos(){
+    public int contardigitos(){
         String resultados = String.valueOf(resultado);
-        double nres = resultados.length();
+        int nres = resultados.length();
         int i;
-        double count=0;
-        for (i = 0; i <nres-1 ; i++) {
+        int count=0;
+        for (i = 1; i <nres-3 ; i++) {
             count++;
         }
         return count;
