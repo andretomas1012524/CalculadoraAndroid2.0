@@ -62,7 +62,8 @@
         <activity android:name=".calculocientifco3" />
         <activity android:name=".calculocientifico4" />
         <activity android:name=".calculocientifico5" />
-        <activity android:name=".Menuresultado11"></activity>
+        <activity android:name=".Menuresultado11" />
+        <activity android:name=".Menuresultado12"></activity>
     </application>
 
 </manifest>
