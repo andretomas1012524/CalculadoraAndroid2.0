@@ -60,7 +60,7 @@ public class Menubin extends AppCompatActivity {
         }
         intent.putExtra(Numerobasico1,num1);
         intent.putExtra(Numerobasico2,num2);
-        if (num1 ==9 && num2==1){
+        /*if (num1 ==9 && num2==1){
             Toast.makeText(this, "O resultado vai ser maior ou igual do que dez", Toast.LENGTH_LONG).show();
             return;
         }else if (num1 ==-9 && num2==-1){
@@ -82,6 +82,10 @@ public class Menubin extends AppCompatActivity {
             Toast.makeText(this, "O resultado vai ser menor ou igual do que dez negativo", Toast.LENGTH_LONG).show();
             return;
         }else if (num1 == 5 && num2 ==5){
+            Toast.makeText(this, "O resultado vai ser maior ou igual do que dez", Toast.LENGTH_LONG).show();
+            return;
+        }*/
+        if(num1 - num2 >= 10 || num1 - num2 <=-10){
             Toast.makeText(this, "O resultado vai ser maior ou igual do que dez", Toast.LENGTH_LONG).show();
             return;
         }

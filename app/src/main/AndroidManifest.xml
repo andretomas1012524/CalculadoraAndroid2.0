@@ -72,7 +72,9 @@
         <activity android:name=".Menubin2" />
         <activity android:name=".Menubin3" />
         <activity android:name=".Menuresbin" />
-        <activity android:name=".Menuresbin2"></activity>
+        <activity android:name=".Menuresbin2" />
+        <activity android:name=".Menuresbin4" />
+        <activity android:name=".Menuresbin3"></activity>
     </application>
 
 </manifest>
