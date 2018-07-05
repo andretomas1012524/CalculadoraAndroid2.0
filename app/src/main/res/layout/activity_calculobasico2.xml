@@ -15,8 +15,10 @@
         android:layout_marginTop="8dp"
         android:ems="10"
         android:fontFamily="sans-serif"
+        android:hint="numero1"
         android:inputType="number|numberSigned|numberDecimal"
         android:textSize="24sp"
+        android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView26"
@@ -29,12 +31,14 @@
         android:layout_marginTop="8dp"
         android:ems="10"
         android:fontFamily="sans-serif"
+        android:hint="numero2"
         android:inputType="number|numberSigned|numberDecimal"
         android:textSize="24sp"
+        android:visibility="visible"
         app:layout_constraintTop_toBottomOf="@+id/nbasico6"
+        tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="8dp"
-        tools:text="numero2"
-        tools:ignore="MissingConstraints" />
+        tools:text="numero2" />
 
     <TextView
         android:id="@+id/textView25"
