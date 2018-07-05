@@ -8,8 +8,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class Menubinpred3 extends AppCompatActivity {
-    public static double numMax = 8;
-    public static double numMin = -8;
+    public static double numMax = 256;
+    public static double numMin = -256;
     public static final String Numerobasico1 = "Numero1";
     public static final String Numerobasico2 = "Numero2";
     public static final String N ="N";
@@ -26,7 +26,9 @@ public class Menubinpred3 extends AppCompatActivity {
         EditText editTextnum3 = (EditText)findViewById(R.id.editText18);
         double num1;
         double num2;
-        double n = 0;
+        double n=1;
+
+
         try {
             num1 = Double.parseDouble(editTextnum1.getText().toString());
         }catch (NumberFormatException e){
@@ -61,16 +63,11 @@ public class Menubinpred3 extends AppCompatActivity {
             editTextnum2.requestFocus();
             return;
         }
-        numMax = numMax * Math.pow(2,n);
-        numMin = -numMin * Math.pow(2,n);
         intent.putExtra(Numerobasico1,num1);
         intent.putExtra(Numerobasico2,num2);
         intent.putExtra(N,n);
 
-        if(num1 - num2 > numMax || num1 - num2 <-numMin){
-            Toast.makeText(this, "O resultado vai ser maior ou menor do colocado", Toast.LENGTH_LONG).show();
-            return;
-        }
+
         startActivity(intent);
     }
 }

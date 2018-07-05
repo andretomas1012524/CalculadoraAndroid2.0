@@ -17,7 +17,7 @@ public class calculocientifico4 extends AppCompatActivity {
         setContentView(R.layout.activity_calculocientifico4);
     }
 
-    public void divccient(View view) {
+    public void divicient(View view) {
         Intent intent = new Intent(this,Menuresultado14.class);
 
         EditText editTextnum1 = (EditText)findViewById(R.id.ncient6);

@@ -17,7 +17,7 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 public class EditEconomia extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor> {
-    private static final int Pais_CURSOR_LOADER_ID = 0;
+    private static final int Financa_CursoLoader_ID = 0;
     private EditText editTextTitle;
     private EditText editTextPrice;
     private Spinner spinnerFuncao;
@@ -57,12 +57,12 @@ public class EditEconomia extends AppCompatActivity implements LoaderManager.Loa
         editTextTitle.setText(funcoes.getNome());
         editTextPrice.setText(String.format("%.2f",funcoes.getValor()));
 
-        getSupportLoaderManager().initLoader(Pais_CURSOR_LOADER_ID, null, (android.support.v4.app.LoaderManager.LoaderCallbacks<Object>) this);
+        getSupportLoaderManager().initLoader(Financa_CursoLoader_ID, null, (android.support.v4.app.LoaderManager.LoaderCallbacks<Object>) this);
     }
 
     protected void onResume() {
         super.onResume();
-        getSupportLoaderManager().restartLoader(Pais_CURSOR_LOADER_ID, null, (android.support.v4.app.LoaderManager.LoaderCallbacks<Object>) this);
+        getSupportLoaderManager().restartLoader(Financa_CursoLoader_ID, null, (android.support.v4.app.LoaderManager.LoaderCallbacks<Object>) this);
     }
 
     public void cancel(View view) {
@@ -79,18 +79,18 @@ public class EditEconomia extends AppCompatActivity implements LoaderManager.Loa
                 null
         );
         if (recordsAffected > 0) {
-            Toast.makeText(this, "Conta guardada", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Financiamento guardada", Toast.LENGTH_LONG).show();
             finish();
             return;
         }
-        Toast.makeText(this, "Não foi possivel guardar a conta", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "Não foi possivel guardar o Financiamento", Toast.LENGTH_LONG).show();
 
     }
 
     @NonNull
     @Override
     public Loader<Cursor> onCreateLoader(int id, @Nullable Bundle args) {
-        if (id == Pais_CURSOR_LOADER_ID) {
+        if (id == Financa_CursoLoader_ID) {
             return new CursorLoader(this, FuncoesContentProvider.FINANCA_URI, DbTabelaFinancas.All_colunas, null, null, null);
         }
         return null;
@@ -105,11 +105,11 @@ public class EditEconomia extends AppCompatActivity implements LoaderManager.Loa
                 new int[]{android.R.id.text1}
                 );
         spinnerFuncao.setAdapter(cursorAdapterCategories);
-        int idCategory = funcoes.getIdFinanca();
+        int idfinanca = funcoes.getIdFinanca();
         for (int i = 0; i < spinnerFuncao.getCount(); i++) {
             Cursor cursor = (Cursor) spinnerFuncao.getItemAtPosition(i);
             final int posId = cursor.getColumnIndex(DbTabelaFinancas._ID);
-            if (idCategory == cursor.getInt(posId)) {
+            if (idfinanca == cursor.getInt(posId)) {
                 spinnerFuncao.setSelection(i);
                 break;
             }

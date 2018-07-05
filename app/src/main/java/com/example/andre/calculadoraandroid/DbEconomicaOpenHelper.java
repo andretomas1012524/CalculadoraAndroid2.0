@@ -9,7 +9,7 @@ import android.database.sqlite.SQLiteOpenHelper;
  */
 
 public class DbEconomicaOpenHelper extends SQLiteOpenHelper {
-    private static final boolean Producao = false;
+    private static final boolean PRODUCAO = false;
     public static final String DATABASE_NAME = "Economia.db";
     public static final int DATABASE_VERSION = 1;
 
@@ -24,8 +24,7 @@ public class DbEconomicaOpenHelper extends SQLiteOpenHelper {
         dbTabelaFuncoes.create();
         DbTabelaFinancas dbTabelaFinancas = new DbTabelaFinancas(db);
         dbTabelaFinancas.create();
-
-        if(!Producao){
+        if(!PRODUCAO){
             seed(db);
         }
     }

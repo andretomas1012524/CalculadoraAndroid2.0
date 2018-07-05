@@ -68,7 +68,7 @@ public class Ativityrecicler extends AppCompatActivity implements LoaderManager.
     @Override
     public android.support.v4.content.Loader<Cursor> onCreateLoader(int id, @Nullable Bundle args) {
         if (id == CursorLoaderID) {
-            return new CursorLoader(this, FuncoesContentProvider.FINANCA_URI, DbTabelaFinancas.All_colunas, null, null, null);
+            return new CursorLoader(this, FuncoesContentProvider.Economia_URI, DbTabelaFuncoes.All_colunas, null, null, null);
         }
        return null;
     }

@@ -44,7 +44,7 @@ public class DbFuncoesTest {
         Financas Financas = new Financas();
         Financas.setNome("Financa");
         // Insert/create (C)RUD
-        long id = insertPais(tabelaPais, Financas);
+        long id = inserFinanca(tabelaPais, Financas);
 
         // query/read C(R)UD
         Financas = ReadFirstFinanca(tabelaPais, "Financa", id);
@@ -94,7 +94,7 @@ public class DbFuncoesTest {
          DbTabelaFinancas tabelaFinancas = new DbTabelaFinancas(db);
          Financas Financas = new Financas();
          Financas.setNome("Financa");
-         long idPais = insertPais(tabelaFinancas, Financas);
+         long idPais = inserFinanca(tabelaFinancas, Financas);
          DbTabelaFuncoes tabelaFuncoes = new DbTabelaFuncoes(db);
          // Insert/create (C)RUD
          Funcoes funcoes = new Funcoes();
@@ -149,7 +149,7 @@ public class DbFuncoesTest {
            assertEquals("Id funcao incorreta",expectedID , funcoes.getId());
            assertEquals("Nome de funcao Incorreta",expectedNome , funcoes.getNome());
            assertEquals("Funcao valor incorreta",expectedNum , funcoes.getValor(),0.25);
-            assertEquals("Funcao IDFinanca incorreta",expectPaisID , funcoes.getIdFinanca());
+           assertEquals("Funcao IDFinanca incorreta",expectPaisID , funcoes.getIdFinanca());
 
             return funcoes;
        }
@@ -159,9 +159,9 @@ public class DbFuncoesTest {
             return InstrumentationRegistry.getTargetContext();
         }
 
-    private long insertPais(DbTabelaFinancas tablepais, Financas category) {
-        long id = tablepais.insert(
-                DbTabelaFinancas.getContentValues(category)
+    private long inserFinanca(DbTabelaFinancas tabelafinanca, Financas financa) {
+        long id = tabelafinanca.insert(
+                DbTabelaFinancas.getContentValues(financa)
         );
 
         assertNotEquals("Impossível inserir a Financa", -1, id);
